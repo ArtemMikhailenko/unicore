@@ -2,16 +2,17 @@ import Image from 'next/image';
 
 interface FeatureCardProps {
   title: string;
+  mobileTitle?: string;
   description: string;
   iconSrc: string;
   backgroundSrc: string;
   className?: string;
 }
 
-function FeatureCard({ title, description, iconSrc, backgroundSrc, className = '' }: FeatureCardProps) {
+function FeatureCard({ title, mobileTitle, description, iconSrc, backgroundSrc, className = '' }: FeatureCardProps) {
   return (
     <div 
-      className={`relative rounded-[20px] px-[30px] py-[80px] overflow-hidden ${className}`}
+      className={`relative rounded-[20px] px-[30px] py-[20px] lg:py-[80px] overflow-hidden h-auto lg:h-[270px] ${className}`}
       style={{
         backgroundImage: `url(${backgroundSrc})`,
         backgroundSize: 'cover',
@@ -20,8 +21,8 @@ function FeatureCard({ title, description, iconSrc, backgroundSrc, className = '
     >
      
       
-      <div className="relative z-10 flex flex-col gap-[10px]">
-        <div className="flex items-center gap-3">
+      <div className="relative z-10 flex flex-col gap-[10px] items-center lg:items-start">
+        <div className="flex lg:flex-col lg:flex-row items-center gap-[10px] lg:gap-3">
           <Image 
             src={iconSrc}
             alt={title}
@@ -30,13 +31,14 @@ function FeatureCard({ title, description, iconSrc, backgroundSrc, className = '
             className="w-[32px] h-[28px] rounded-lg"
           />
           <h3 
-            className="text-[24px] leading-[29px] font-bold text-white"
+            className="text-[16px] lg:text-[24px] leading-[19px] lg:leading-[29px] font-bold text-white text-center lg:text-left"
             style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
           >
-            {title}
+            <span className="lg:hidden">{mobileTitle || title}</span>
+            <span className="hidden lg:inline">{title}</span>
           </h3>
         </div>
-        <p className="text-[14px] leading-[160%] text-[#737AAE]">
+        <p className="text-[12px] lg:text-[14px] leading-[160%] text-[#737AAE] text-center lg:text-left line-clamp-3 lg:line-clamp-none">
           {description}
         </p>
       </div>
@@ -82,6 +84,7 @@ const features = [
   },
   {
     title: 'Customization',
+    mobileTitle: 'Custom',
     iconSrc: '/images/features/customization.svg',
     backgroundSrc: '/images/features/customization-bg.png',
     description: 'Switch characters, accessories, and weapons through an easy-to-use interface. Play any character with any weapon. All weapons, characters, and accessories can be changed through the menu.',
@@ -119,11 +122,11 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="w-full flex items-center justify-center px-4 py-[50px]">
+    <section className="w-full flex items-center justify-center px-4 py-[30px] lg:py-[50px]">
       <div className="w-full max-w-[1002px] flex flex-col items-center gap-[25px]">
         {/* Title */}
         <h2 
-          className="text-[36px] leading-[44px] font-bold text-white text-center"
+          className="text-[24px] lg:text-[36px] leading-[29px] lg:leading-[44px] font-bold text-white text-center"
           style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
         >
           See Our Unique Features!

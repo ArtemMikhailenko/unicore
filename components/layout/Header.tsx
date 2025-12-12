@@ -5,7 +5,7 @@ import { MobileMenu } from './MobileMenu';
 
 export function Header() {
   return (
-    <header className="w-full h-[92px] bg-[#0D0525] flex items-center justify-center py-[30px] px-4">
+    <header className="w-full h-[56px] lg:h-[92px] bg-[#0D0525] flex items-center justify-center py-[12px] lg:py-[30px] px-4">
       <div className="w-full max-w-[1132px] flex items-center justify-center gap-[50px]">
         <Link href="/" className="flex items-center z-50">
           <Image
