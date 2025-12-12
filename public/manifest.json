@@ -1,0 +1,16 @@
+{
+  "name": "UNICORE",
+  "short_name": "UNICORE",
+  "description": "Premium gaming cheats and mods",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0218",
+  "theme_color": "#0A0218",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

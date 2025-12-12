@@ -20,6 +20,7 @@ export function HeroSection() {
                     alt="star"
                     width={16}
                     height={16}
+                    loading="eager"
                   />
                 ))}
               </div>
@@ -50,11 +51,13 @@ export function HeroSection() {
         {/* Hero Image */}
         <div className="hidden lg:block relative w-full lg:w-[561px] h-[400px] lg:h-[474px]">
           <Image
-            src="/images/hero.png"
+            src="/images/hero.webp"
             alt="Unicore character"
             fill
+            sizes="(max-width: 1024px) 100vw, 561px"
             className="object-contain"
             priority
+            quality={90}
           />
         </div>
       </div>

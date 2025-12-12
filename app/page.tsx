@@ -12,6 +12,7 @@ export default function Home() {
         height={800}
         className="absolute top-0 left-0 pointer-events-none z-0"
         priority
+        quality={85}
       />
       <Image 
         src="/images/main-mid.svg"
@@ -19,7 +20,8 @@ export default function Home() {
         width={800}
         height={800}
         className="absolute top-1/2 right-0 -translate-y-1/2 pointer-events-none z-0"
-        priority
+        loading="lazy"
+        quality={85}
       />
       <Image 
         src="/images/main-bottom.svg"
@@ -27,7 +29,8 @@ export default function Home() {
         width={800}
         height={800}
         className="absolute bottom-0 left-0 pointer-events-none z-0"
-        priority
+        loading="lazy"
+        quality={85}
       />
       
       {/* Content */}
