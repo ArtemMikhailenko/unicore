@@ -12,8 +12,7 @@ const nextConfig: NextConfig = {
     remotePatterns: []
   },
   poweredByHeader: false,
-  reactStrictMode: true,
-  swcMinify: true
+  reactStrictMode: true
 };
 
 export default nextConfig;
