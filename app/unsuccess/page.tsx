@@ -22,13 +22,13 @@ export default function UnsuccessPage() {
       {/* Content */}
       <div className="w-full max-w-[550px] flex flex-col items-center relative z-10 px-4">
         {/* Character Image */}
-        <div className="relative w-full h-[262px] md:h-[355px] flex items-end justify-center mb-[-60px] md:mb-[-80px]">
+        <div className="relative w-[180px] h-[202px] lg:h-[262px] md:h-[255px] flex items-end justify-center mb-[-20px] md:mb-[-80px]">
           <Image
-            src="/images/unsuccess-character.png"
+            src="/images/payment-error.png"
             alt="Error"
-            width={500}
-            height={355}
-            className="object-contain object-bottom"
+            width={220}
+            height={255}
+            className="object-contain object-bottom w-[220px] h-[252px] lg:h-[262px] md:h-[255px]"
             priority
           />
         </div>
@@ -63,10 +63,10 @@ export default function UnsuccessPage() {
           <div className="flex gap-[10px]">
             <button
               onClick={() => router.back()}
-              className="w-[240px] h-[46px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] px-[30px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
+              className="w-[240px] h-[46px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] px-[10px] lg:px-[30px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
             >
               <span 
-                className="text-[18px] font-semibold text-[#6E3B08]"
+                className="text-[14px] lg:text-[18px] font-semibold text-[#6E3B08] text-nowrap"
                 style={{ fontFamily: 'Source Sans 3, sans-serif' }}
               >
                 Try Again
@@ -76,10 +76,10 @@ export default function UnsuccessPage() {
               href="https://discord.gg/unicore"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[240px] h-[46px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] px-[30px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
+              className="w-[240px] h-[46px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] px-[10px] lg:px-[30px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
             >
               <span 
-                className="text-[18px] font-semibold text-[#6E3B08]"
+                className="text-[14px] lg:text-[18px] font-semibold text-[#6E3B08] text-nowrap"
                 style={{ fontFamily: 'Source Sans 3, sans-serif' }}
               >
                 Contact Support
