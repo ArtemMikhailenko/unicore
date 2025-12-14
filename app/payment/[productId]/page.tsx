@@ -2,14 +2,53 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/style.css';
 
 export default function PaymentPage() {
   const [activeTab, setActiveTab] = useState<'features' | 'system-requirements' | 'media'>('features');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState({ name: '1 Day Subscription Plan', price: '$2' });
   const params = useParams();
   const router = useRouter();
   const productId = params.productId as string;
+
+  const plans = [
+    { name: '1 Day Subscription Plan', price: '$2' },
+    { name: '7 Days Subscription Plan', price: '$10' },
+    { name: '30 Days Subscription Plan', price: '$30' },
+    { name: 'Lifetime Access', price: '$99' }
+  ];
+
+  const mediaItems = [
+    { src: '/images/media/preview-1.jpg', w: 1920, h: 1080, title: 'Preview 1' },
+    { src: '/images/media/preview-2.jpg', w: 1920, h: 1080, title: 'Preview 2' },
+    { src: '/images/media/preview-3.jpg', w: 1920, h: 1080, title: 'Preview 3' },
+    { src: '/images/media/preview-4.jpg', w: 1920, h: 1080, title: 'Preview 4' }
+  ];
+
+  useEffect(() => {
+    let lightbox: PhotoSwipeLightbox | null = null;
+
+    if (activeTab === 'media') {
+      lightbox = new PhotoSwipeLightbox({
+        gallery: '#media-gallery',
+        children: 'a',
+        pswpModule: () => import('photoswipe'),
+        bgOpacity: 0.9,
+        padding: { top: 50, bottom: 50, left: 50, right: 50 }
+      });
+      lightbox.init();
+    }
+
+    return () => {
+      if (lightbox) {
+        lightbox.destroy();
+      }
+    };
+  }, [activeTab]);
 
   return (
     <main className="w-full min-h-screen bg-[#0A0218] flex justify-center py-[50px]">
@@ -36,20 +75,32 @@ export default function PaymentPage() {
           <div className="w-full lg:w-[647px] flex flex-col gap-[20px]">
             {/* Game Title & Description */}
             <div className="flex flex-col gap-[10px]">
-              <div className="flex items-center gap-3">
-                <Image 
-                  src="/images/products/genshin-logo.png"
-                  alt="Genshin Impact"
-                  width={56}
-                  height={56}
-                  className="w-14 h-14 rounded-lg"
-                />
-                <h1 
-                  className="text-[36px] leading-[42px] font-bold text-white"
-                  style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
-                >
-                  Genshin Impact
-                </h1>
+              <div className="flex items-center justify gap-3">
+                <div className="flex items-center gap-3">
+                  <Image 
+                    src="/images/products/genshin-logo.png"
+                    alt="Genshin Impact"
+                    width={56}
+                    height={56}
+                    className="w-14 h-14 rounded-lg"
+                  />
+                  <h1 
+                    className="text-[36px] leading-[42px] font-bold text-white"
+                    style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
+                  >
+                    Genshin Impact
+                  </h1>
+                </div>
+                
+                {/* Undetected Badge */}
+                <div className="hidden lg:flex items-center gap-[10px] px-[20px] py-[5px] bg-[#0D2818] border border-[#1F4A30] rounded-[10px]">
+                  <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.49813 0C4.58438 0 4.67063 0.01875 4.74938 0.054375L8.28188 1.5525C8.69438 1.72688 9.00188 2.13375 9.00001 2.625C8.99063 4.485 8.22563 7.88813 4.99501 9.435C4.68188 9.585 4.31813 9.585 4.00501 9.435C0.772509 7.88813 0.00938353 4.485 8.52842e-06 2.625C-0.00186647 2.13375 0.305634 1.72688 0.718134 1.5525L4.24876 0.054375C4.32751 0.01875 4.41188 0 4.49813 0Z" fill="#2DF23A" />
+                  </svg>
+                  <span className="text-[18px] leading-[160%] font-semibold text-[#4ADE80]">
+                    Undetected
+                  </span>
+                </div>
               </div>
               <p className="text-[14px] leading-[160%] text-[#737AAE]">
                 Unicore for Genshin Impact is an innovative, security-focused tool. Various teleportation methods, intelligent auto-farm, battle modifiers, dialogue automation, cutscene skipping, quest acceleration, and numerous quality-of-life features make progression faster and smoother.
@@ -62,48 +113,60 @@ export default function PaymentPage() {
               <div className="w-full h-[60px] bg-[#0D0525] rounded-[15px] px-[30px] flex items-center justify-between">
                 <button 
                   onClick={() => setActiveTab('features')}
-                  className={`h-[60px] px-[15px] flex items-center gap-[5px] ${
+                  className={`h-[60px] px-[15px] flex items-center gap-[5px] group ${
                     activeTab === 'features' 
                       ? 'border-b border-[#FFC260]' 
-                      : 'text-[#737AAE] hover:text-white'
+                      : 'text-[#737AAE] hover:text-[#FFC260]'
                   } transition-colors`}
                 >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M2.4 2.4H4.8V4.8H2.4V2.4ZM6.4 2.4H8.8V4.8H6.4V2.4ZM10.4 2.4H12.8V4.8H10.4V2.4ZM2.4 6.4H4.8V8.8H2.4V6.4ZM6.4 6.4H8.8V8.8H6.4V6.4ZM10.4 6.4H12.8V8.8H10.4V6.4ZM2.4 10.4H4.8V12.8H2.4V10.4ZM6.4 10.4H8.8V12.8H6.4V10.4ZM10.4 10.4H12.8V12.8H10.4V10.4Z" fill={activeTab === 'features' ? '#FFC260' : 'currentColor'}/>
-                  </svg>
+                  <Image 
+                    src="/images/tabs/features.svg"
+                    alt=""
+                    width={16}
+                    height={16}
+                    className={activeTab === 'features' ? 'brightness-0 invert sepia saturate-[10] hue-rotate-[10deg]' : 'opacity-50 group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:saturate-[10] group-hover:hue-rotate-[10deg]'}
+                  />
                   <span className={`text-[16px] leading-[160%] ${activeTab === 'features' ? 'text-white' : ''}`}>Features</span>
                 </button>
                 <button 
                   onClick={() => setActiveTab('system-requirements')}
-                  className={`h-[60px] px-[15px] flex items-center gap-[5px] ${
+                  className={`h-[60px] px-[15px] flex items-center gap-[5px] group ${
                     activeTab === 'system-requirements' 
                       ? 'border-b border-[#FFC260]' 
-                      : 'text-[#737AAE] hover:text-white'
+                      : 'text-[#737AAE] hover:text-[#FFC260]'
                   } transition-colors`}
                 >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M0.450422 0.440422C0.450422 0.440422 8 0 8 0C8 0 15.5704 0.440422 15.5704 0.440422C15.5704 0.440422 16 8 16 8C16 8 15.5704 15.5704 15.5704 15.5704C15.5704 15.5704 8 16 8 16C8 16 0.450422 15.5704 0.450422 15.5704C0.450422 15.5704 0 8 0 8C0 8 0.450422 0.440422 0.450422 0.440422ZM3.2 3.2H4.8V4.8H3.2V3.2ZM11.2 3.2H12.8V4.8H11.2V3.2ZM3.2 11.2H4.8V12.8H3.2V11.2ZM11.2 11.2H12.8V12.8H11.2V11.2ZM5.6 5.6H10.4V10.4H5.6V5.6Z" fill={activeTab === 'system-requirements' ? '#FFC260' : 'currentColor'}/>
-                  </svg>
+                  <Image 
+                    src="/images/tabs/system.svg"
+                    alt=""
+                    width={16}
+                    height={16}
+                    className={activeTab === 'system-requirements' ? 'brightness-0 invert sepia saturate-[10] hue-rotate-[10deg]' : 'opacity-50 group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:saturate-[10] group-hover:hue-rotate-[10deg]'}
+                  />
                   <span className={`text-[16px] leading-[160%] ${activeTab === 'system-requirements' ? 'text-white' : ''}`}>System Requirements</span>
                 </button>
                 <button 
                   onClick={() => setActiveTab('media')}
-                  className={`h-[60px] px-[15px] flex items-center gap-[5px] ${
+                  className={`h-[60px] px-[15px] flex items-center gap-[5px] group ${
                     activeTab === 'media' 
                       ? 'border-b border-[#FFC260]' 
-                      : 'text-[#737AAE] hover:text-white'
+                      : 'text-[#737AAE] hover:text-[#FFC260]'
                   } transition-colors`}
                 >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M0 1.6C0 1.04772 0.447715 0.6 1 0.6H15C15.5523 0.6 16 1.04772 16 1.6V13.6C16 14.1523 15.5523 14.6 15 14.6H1C0.447716 14.6 0 14.1523 0 13.6V1.6Z" fill="currentColor"/>
-                  </svg>
+                  <Image 
+                    src="/images/tabs/media.svg"
+                    alt=""
+                    width={16}
+                    height={16}
+                    className={activeTab === 'media' ? 'brightness-0 invert sepia saturate-[10] hue-rotate-[10deg]' : 'opacity-50 group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:saturate-[10] group-hover:hue-rotate-[10deg]'}
+                  />
                   <span className={`text-[16px] leading-[160%] ${activeTab === 'media' ? 'text-white' : ''}`}>Media</span>
                 </button>
               </div>
 
               {/* Tab Content */}
               {activeTab === 'features' && (
-                <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[25px]">
+                <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[25px] animate-fadeIn">
                   {/* Unique Features */}
                   <div className="flex flex-col gap-[10px]">
                     <h3 
@@ -208,7 +271,7 @@ export default function PaymentPage() {
               )}
 
               {activeTab === 'system-requirements' && (
-                <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[25px]">
+                <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[25px] animate-fadeIn">
                   {/* Supported OS */}
                   <div className="flex flex-col gap-[10px]">
                     <h3 
@@ -280,26 +343,44 @@ export default function PaymentPage() {
               )}
 
               {activeTab === 'media' && (
-                <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[25px]">
+                <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[25px] animate-fadeIn">
                   {/* Main Video/Image Placeholder */}
-                  <div className="w-full h-[329px] bg-[#100A36] rounded-[8px] flex items-center justify-center">
-                    <span className="text-[16px] text-[#737AAE]">Video Preview</span>
-                  </div>
+                  <a
+                    href={mediaItems[0].src}
+                    data-pswp-width={mediaItems[0].w}
+                    data-pswp-height={mediaItems[0].h}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full h-[329px] bg-[#100A36] rounded-[8px] flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity"
+                    style={{
+                      backgroundImage: `url(${mediaItems[0].src})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  >
+                    <span className="text-[16px] text-[#737AAE] bg-[#0D0525] px-4 py-2 rounded-lg">Click to view</span>
+                  </a>
 
-                  {/* Thumbnail Grid */}
-                  <div className="grid grid-cols-4 gap-[25px]">
-                    <div className="w-full h-[96px] bg-[#100A36] rounded-[8px] flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity">
-                      <span className="text-[12px] text-[#737AAE]">1</span>
-                    </div>
-                    <div className="w-full h-[96px] bg-[#100A36] rounded-[8px] flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity">
-                      <span className="text-[12px] text-[#737AAE]">2</span>
-                    </div>
-                    <div className="w-full h-[96px] bg-[#100A36] rounded-[8px] flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity">
-                      <span className="text-[12px] text-[#737AAE]">3</span>
-                    </div>
-                    <div className="w-full h-[96px] bg-[#100A36] rounded-[8px] flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity">
-                      <span className="text-[12px] text-[#737AAE]">4</span>
-                    </div>
+                  {/* Thumbnail Grid - 2 rows x 2 cols */}
+                  <div id="media-gallery" className="grid grid-cols-2 gap-[25px]">
+                    {mediaItems.slice(0, 4).map((item, index) => (
+                      <a
+                        key={index}
+                        href={item.src}
+                        data-pswp-width={item.w}
+                        data-pswp-height={item.h}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-full h-[157px] bg-[#100A36] rounded-[8px] flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity overflow-hidden"
+                        style={{
+                          backgroundImage: `url(${item.src})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center'
+                        }}
+                      >
+                        <span className="text-[12px] text-[#737AAE] bg-[#0D0525] px-3 py-1 rounded">{index + 1}</span>
+                      </a>
+                    ))}
                   </div>
                 </div>
               )}
@@ -308,22 +389,59 @@ export default function PaymentPage() {
 
           {/* Right Column - Payment Selection */}
           <div className="w-full lg:w-[453px] flex flex-col gap-[10px]">
+            <div className='flex gap-2 align-center '>
+              <Image src="/images/tabs/select-plan.svg" width={40} height={40} alt="Select Plan" />
             <h2 
               className="text-[36px] leading-[42px] font-bold text-white"
               style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
             >
               Select Plan
             </h2>
+            </div>
+            
             
             <div className="w-full bg-[#0D0525] rounded-[30px] p-[30px] flex flex-col gap-[20px]">
-              {/* Plan Selector */}
-              <div className="w-full h-[46px] bg-[#100A36] border border-[#1D1550] rounded-[10px] p-[15px] flex items-center justify-between cursor-pointer hover:border-[#FFC260] transition-colors">
-                <span className="text-[14px] leading-[160%] text-white text-center">
-                  1 Day Subscription Plan — $2
-                </span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M6 7.8L2.4 4.2L3.6 3L6 5.4L8.4 3L9.6 4.2L6 7.8Z" fill="#737AAE"/>
-                </svg>
+              {/* Plan Selector Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="w-full h-[46px] bg-[#100A36] border border-[#1D1550] rounded-[10px] p-[15px] flex items-center justify-between cursor-pointer hover:border-[#FFC260] transition-colors"
+                >
+                  <span className="text-[14px] leading-[160%] text-white">
+                    {selectedPlan.name} — {selectedPlan.price}
+                  </span>
+                  <svg 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 12 12" 
+                    fill="none"
+                    className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                  >
+                    <path d="M6 7.8L2.4 4.2L3.6 3L6 5.4L8.4 3L9.6 4.2L6 7.8Z" fill="#737AAE"/>
+                  </svg>
+                </button>
+
+                {/* Dropdown Menu */}
+                {isDropdownOpen && (
+                  <div className="absolute top-[52px] left-0 w-full bg-[#100A36] border border-[#1D1550] rounded-[10px] overflow-hidden z-10 animate-fadeIn">
+                    {plans.map((plan, index) => (
+                      <button
+                        key={index}
+                        onClick={() => {
+                          setSelectedPlan(plan);
+                          setIsDropdownOpen(false);
+                        }}
+                        className={`w-full p-[15px] text-left text-[14px] leading-[160%] transition-colors ${
+                          selectedPlan.name === plan.name
+                            ? 'bg-[#1D1550] text-[#FFC260]'
+                            : 'text-white hover:bg-[#1D1550] hover:text-[#FFC260]'
+                        }`}
+                      >
+                        {plan.name} — {plan.price}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Continue Button */}

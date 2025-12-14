@@ -41,7 +41,7 @@ export default function NotFound() {
             {/* Character Image */}
             <div className="relative w-[288px] h-[296px] top-[-40px]">
               <Image
-                src="/images/error-photo.png"
+                src="/images/error-photo.webp"
                 alt="Character"
                 fill
                 className="object-contain"

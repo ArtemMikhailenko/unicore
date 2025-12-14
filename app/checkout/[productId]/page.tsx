@@ -19,7 +19,7 @@ const paymentMethods = [
     name: 'PZMPay',
     description: 'Bank Cards',
     logo: '/images/payment/pzmpay.png',
-    bgColor: 'bg-[#1C0C4E]',
+    bgColor: 'bg-[#1C0C66]',
     borderColor: 'border-[#24186E]',
   },
   {
@@ -34,7 +34,7 @@ const paymentMethods = [
     id: 'funpay',
     name: 'FunPay',
     description: 'Worldwide (RU, USA, UA, KZ)',
-    logo: '/images/payment/funpay.png',
+    logo: '/images/payment/finpay.png',
     bgColor: 'bg-[#100A36]',
     borderColor: 'border-[#271266]',
   },
@@ -50,7 +50,7 @@ const paymentMethods = [
     id: 'resellers',
     name: 'Resellers',
     description: 'Paypal, Stripe, Alipay, ...',
-    logo: '/images/payment/resellers.png',
+    logo: '/images/payment/resselers.png',
     bgColor: 'bg-[#100A36]',
     borderColor: 'border-[#1D1550]',
   },
@@ -105,13 +105,29 @@ export default function CheckoutPage() {
         <div className="flex flex-col lg:flex-row gap-[32px]">
           {/* Left Column - Payment Methods */}
           <div className="w-full lg:w-[647px] flex flex-col gap-[20px]">
-            {/* Title */}
-            <h1 
-              className="text-[36px] leading-[44px] font-bold text-white"
-              style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
-            >
-              Payment Methods
-            </h1>
+            {/* Product Info Header */}
+            <div className="flex items-center gap-[15px]">
+              <div className="w-[64px] h-[64px] bg-[#0D0525] rounded-[15px] flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/products/genshin-logo.png"
+                  alt="Genshin Impact"
+                  width={64}
+                  height={64}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex flex-col gap-[5px]">
+                <h1 
+                  className="text-[32px] leading-[44px] font-bold text-white"
+                  style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
+                >
+                  Genshin Impact
+                </h1>
+                <span className="text-[16px] text-[#737AAE] leading-[160%]">
+                  1 Day Subscription Plan, $2
+                </span>
+              </div>
+            </div>
 
             {/* Payment Methods Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px]">
@@ -123,14 +139,20 @@ export default function CheckoutPage() {
                     selectedMethod === method.id ? 'border-[#FFC260]' : method.borderColor
                   } rounded-[15px] p-[20px] flex items-center gap-[10px] hover:border-[#FFC260] transition-colors`}
                 >
-                  <div className="w-[32px] h-[32px] bg-[#1D1550] rounded-[8px] flex items-center justify-center flex-shrink-0">
-                    <span className="text-[10px] text-[#737AAE]">Logo</span>
+                  <div className="w-[32px] h-[32px] rounded-[8px] overflow-hidden flex-shrink-0">
+                    <Image
+                      src={method.logo}
+                      alt={method.name}
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="flex flex-col items-start justify-center flex-1 min-w-0">
                     <span className="text-[18px] font-semibold text-white leading-none">
                       {method.name}
                     </span>
-                    <span className="text-[8px] text-[#737AAE] leading-none mt-[6px] truncate w-full">
+                    <span className="text-[8px] text-[#737AAE] leading-none mt-[6px] truncate ">
                       {method.description}
                     </span>
                   </div>
@@ -153,7 +175,7 @@ export default function CheckoutPage() {
               {/* Product Info */}
               <div className="flex items-center gap-[15px] pb-[20px] border-b border-[#1D1550]">
                 <div className="w-[48px] h-[48px] bg-[#100A36] rounded-[8px] flex items-center justify-center">
-                  <span className="text-[12px] text-[#737AAE]">GI</span>
+                  <Image src="/images/products/genshin-logo.png" alt="Genshin Impact" width={48} height={48}></Image>
                 </div>
                 <div className="flex flex-col flex-1">
                   <span className="text-[16px] font-semibold text-white">Genshin Impact</span>
@@ -174,13 +196,25 @@ export default function CheckoutPage() {
                   <span className="text-[14px] text-[#737AAE]">25%</span>
                 </div>
                 <div className="flex gap-[10px]">
-                  <input
-                    type="text"
-                    value={discountCode}
-                    onChange={(e) => setDiscountCode(e.target.value)}
-                    placeholder="Enter discount code"
-                    className="flex-1 h-[46px] bg-[#100A36] border border-[#1D1550] rounded-[10px] px-[15px] text-[14px] text-white placeholder:text-[#737AAE] focus:border-[#FFC260] outline-none transition-colors"
-                  />
+                  <div className="relative flex-1">
+                    <input
+                      type="text"
+                      value={discountCode}
+                      onChange={(e) => setDiscountCode(e.target.value)}
+                      placeholder="Enter discount code"
+                      className="w-full h-[46px] bg-[#100A36] border border-[#1D1550] rounded-[10px] pl-[15px] pr-[35px] text-[14px] text-white placeholder:text-[#737AAE] focus:border-[#FFC260] outline-none transition-colors"
+                    />
+                    <svg 
+                      className="absolute right-[15px] top-1/2 -translate-y-1/2 pointer-events-none" 
+                      width="12" 
+                      height="12" 
+                      viewBox="0 0 12 12" 
+                      fill="none" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M2.4002 1.20001C1.73832 1.20001 1.2002 1.73814 1.2002 2.40001V8.40001C1.2002 9.06189 1.73832 9.60001 2.4002 9.60001H4.5002V5.40001C4.5002 4.23939 5.43957 3.30001 6.6002 3.30001H7.8002V2.40001C7.8002 1.73814 7.26207 1.20001 6.6002 1.20001H2.4002ZM5.8502 3.30001H3.1502C2.90082 3.30001 2.7002 3.09939 2.7002 2.85001C2.7002 2.60064 2.90082 2.40001 3.1502 2.40001H5.8502C6.09957 2.40001 6.3002 2.60064 6.3002 2.85001C6.3002 3.09939 6.09957 3.30001 5.8502 3.30001ZM6.6002 4.20001C5.93832 4.20001 5.4002 4.73814 5.4002 5.40001V9.60001C5.4002 10.2619 5.93832 10.8 6.6002 10.8H9.6002C10.2621 10.8 10.8002 10.2619 10.8002 9.60001V6.49689C10.8002 6.17814 10.6746 5.87251 10.4496 5.64751L9.3527 4.55064C9.1277 4.32564 8.82207 4.20001 8.50332 4.20001H6.6002Z" fill="#737AAE" />
+                    </svg>
+                  </div>
                   <button className="w-[100px] h-[46px] bg-[#FFC260] rounded-[10px] text-[16px] font-semibold text-[#6E3B08] hover:bg-[#FFD280] transition-colors">
                     Apply
                   </button>
@@ -190,7 +224,10 @@ export default function CheckoutPage() {
               {/* Total */}
               <div className="flex items-center justify-between pt-[20px] border-t border-[#1D1550]">
                 <span className="text-[18px] font-semibold text-white">Total</span>
-                <span className="text-[18px] font-semibold text-white">$2 $10</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-[18px] font-semibold text-[#737AAE] line-through">$2</span>
+                  <span className="text-[18px] font-semibold text-white">$10</span>
+                </div>
               </div>
 
               {/* Email Input */}
@@ -218,25 +255,45 @@ export default function CheckoutPage() {
             </div>
 
             {/* Need Help Card */}
-            <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[20px]">
+            <div className="w-full flex flex-col gap-[10px]">
               <h3 
-                className="text-[24px] leading-[32px] font-bold text-white"
+                className="text-[36px] leading-[44px] font-bold text-white"
                 style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
               >
                 Need Help?
               </h3>
-              <p className="text-[14px] text-[#737AAE] leading-[160%]">
-                Feel free to contact support service on our Discord server!
-              </p>
+              
+              <div className="w-full bg-[#0D0525] rounded-[30px] p-[30px] flex flex-col gap-[20px]">
+                <p className="text-[16px] text-[#737AAE] leading-[160%]">
+                  Feel free to contact support service on our Discord server!
+                </p>
 
-              {/* Discord Preview Placeholder */}
-              <div className="w-full h-[120px] bg-[#100A36] rounded-[10px] flex items-center justify-center">
-                <span className="text-[12px] text-[#737AAE]">Discord Chat Preview</span>
+                {/* Message Boxes Preview */}
+                <div className="w-full h-[170px] relative flex flex-col justify-between">
+                  {/* First message bubble - left aligned */}
+                  <div className="absolute top-0 left-0 w-[205px] h-[69px] bg-[#100A36] rounded-[10px] flex items-center px-4">
+                    <div className="flex flex-col gap-1">
+                      <div className="w-[150px] h-[8px] bg-[#1D1550] rounded"></div>
+                      <div className="w-[120px] h-[8px] bg-[#1D1550] rounded"></div>
+                      <div className="w-[80px] h-[8px] bg-[#1D1550] rounded"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Second message bubble - right aligned */}
+                  <div className="absolute bottom-0 right-0 w-[227px] h-[81px] bg-[#1D1550] rounded-[10px] flex items-center px-4">
+                    <div className="flex flex-col gap-1">
+                      <div className="w-[110px] h-[8px] bg-[#271266] rounded"></div>
+                      <div className="w-[170px] h-[8px] bg-[#271266] rounded"></div>
+                      <div className="w-[140px] h-[8px] bg-[#271266] rounded"></div>
+                      <div className="w-[90px] h-[8px] bg-[#271266] rounded"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <button className="w-full h-[46px] bg-[#100A36] border border-[#1D1550] rounded-[10px] text-[18px] font-semibold text-[#737AAE] hover:border-[#FFC260] hover:text-white transition-colors">
+                  Contact Support Service
+                </button>
               </div>
-
-              <button className="w-full h-[46px] bg-[#100A36] border border-[#1D1550] rounded-[10px] text-[16px] font-semibold text-white hover:border-[#FFC260] transition-colors">
-                Contact Support Service
-              </button>
             </div>
           </div>
         </div>

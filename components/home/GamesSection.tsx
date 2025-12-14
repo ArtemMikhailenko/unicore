@@ -11,7 +11,7 @@ interface GameCardProps {
 function GameCard({ title, description, imageSrc, className = '' }: GameCardProps) {
   return (
     <div 
-      className={`relative bg-[#0A0218] rounded-[30px] p-[30px] overflow-hidden ${className}`}
+      className={`relative bg-[#0A0218] rounded-[30px] p-[30px] hover:scale-[1.02] transition-transform  overflow-hidden ${className}`}
       style={{
         backgroundImage: `url(${imageSrc})`,
         backgroundSize: 'cover',

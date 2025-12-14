@@ -15,41 +15,36 @@ export default function SuccessPage() {
   };
 
   return (
-    <main className="w-full min-h-screen bg-[#0A0218] flex flex-col items-center py-[50px] px-4">
-      {/* Header */}
-      <header className="w-full max-w-[1132px] flex items-center justify-between mb-[50px]">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="w-[40px] h-[40px] bg-[#5B4FFF] rounded-[8px] flex items-center justify-center">
-            <span className="text-[24px] font-bold text-white">U</span>
-          </div>
-          <span 
-            className="text-[24px] font-bold text-white"
-            style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
-          >
-            UNICORE
-          </span>
-        </Link>
-        <nav className="flex items-center gap-[50px]">
-          <Link href="/" className="text-[16px] text-white hover:text-[#FFC260] transition-colors">
-            Home
-          </Link>
-          <Link href="/products" className="text-[16px] text-white hover:text-[#FFC260] transition-colors">
-            Products
-          </Link>
-        </nav>
-      </header>
+    <main className="w-full min-h-screen bg-[#0A0218] flex flex-col items-center py-[50px] px-4 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 opacity-50">
+        <Image
+          src="/images/error-bg.svg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      
 
       {/* Content */}
-      <div className="w-full max-w-[550px] flex flex-col items-center gap-[30px]">
+      <div className="w-full max-w-[550px] flex flex-col items-center relative z-10">
         {/* Character Image */}
-        <div className="w-full h-[388px] relative rounded-[20px] overflow-hidden bg-gradient-to-b from-[#1D1550] to-[#0D0525] flex items-end justify-center">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-[14px] text-[#737AAE]">Character Image</span>
-          </div>
+        <div className="relative w-full h-[450px] flex items-end justify-center mb-[-120px]">
+          <Image
+            src="/images/success-character.png"
+            alt="Success"
+            width={500}
+            height={450}
+            className="object-contain object-bottom"
+            priority
+          />
         </div>
 
         {/* Success Card */}
-        <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[25px]">
+        <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[25px] relative z-10">
           {/* Title with Icon */}
           <div className="flex items-start gap-[15px]">
             <div className="w-[40px] h-[40px] bg-[#FFC260] rounded-[10px] flex items-center justify-center flex-shrink-0">
