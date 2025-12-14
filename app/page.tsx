@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0D0525] relative overflow-hidden">
+    <main className="min-h-screen bg-[#0a0219] relative overflow-hidden">
       {/* Background Images */}
       <Image 
         src="/images/main-top.svg"

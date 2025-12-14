@@ -80,7 +80,7 @@ export default function CheckoutPage() {
         <nav className="flex items-center gap-[15px]">
           <Link 
             href="/products"
-            className="text-[16px] leading-[160%] text-[#737AAE] hover:text-white transition-colors"
+            className="text-[12px] md:text-[16px] leading-[160%] text-[#737AAE] hover:text-white transition-colors"
           >
             Products
           </Link>
@@ -89,14 +89,14 @@ export default function CheckoutPage() {
           </svg>
           <Link 
             href="/payment/genshin-impact"
-            className="text-[16px] leading-[160%] text-[#737AAE] hover:text-white transition-colors"
+            className="text-[12px] md:text-[16px] leading-[160%] text-[#737AAE] hover:text-white transition-colors"
           >
             Genshin Impact
           </Link>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M7.8 6L4.2 9.6L3 8.4L5.4 6L3 3.6L4.2 2.4L7.8 6Z" fill="#737AAE"/>
           </svg>
-          <span className="text-[16px] leading-[160%] text-white">
+          <span className="text-[12px] md:text-[16px] leading-[160%] text-white">
             Payment Methods
           </span>
         </nav>
@@ -107,30 +107,30 @@ export default function CheckoutPage() {
           <div className="w-full lg:w-[647px] flex flex-col gap-[20px]">
             {/* Product Info Header */}
             <div className="flex items-center gap-[15px]">
-              <div className="w-[64px] h-[64px] bg-[#0D0525] rounded-[15px] flex items-center justify-center overflow-hidden">
+              <div className="w-[42px] h-[42px] md:w-[64px] md:h-[64px] bg-[#0D0525] rounded-[15px] flex items-center justify-center overflow-hidden">
                 <Image
                   src="/images/products/genshin-logo.png"
                   alt="Genshin Impact"
                   width={64}
                   height={64}
-                  className="w-full h-full object-cover"
+                  className="w-[42px] h-[42px] md:w-[64px] md:h-[64px] object-cover"
                 />
               </div>
-              <div className="flex flex-col gap-[5px]">
+              <div className="flex flex-col md:gap-[5px]">
                 <h1 
-                  className="text-[32px] leading-[44px] font-bold text-white"
+                  className="text-[14px] lg:text-[32px] md:leading-[44px] font-bold text-white"
                   style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
                 >
                   Genshin Impact
                 </h1>
-                <span className="text-[16px] text-[#737AAE] leading-[160%]">
+                <span className="text-[12px] text-[16px] text-[#737AAE] leading-[160%]">
                   1 Day Subscription Plan, $2
                 </span>
               </div>
             </div>
 
             {/* Payment Methods Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px]">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-[20px]">
               {paymentMethods.map((method) => (
                 <button
                   key={method.id}
@@ -166,22 +166,13 @@ export default function CheckoutPage() {
             {/* Checkout Card */}
             <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[20px]">
               <h2 
-                className="text-[36px] leading-[44px] font-bold text-white"
+                className="text-[24px] lg:text-[36px] leading-[44px] font-bold text-white"
                 style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
               >
                 Check Out
               </h2>
 
-              {/* Product Info */}
-              <div className="flex items-center gap-[15px] pb-[20px] border-b border-[#1D1550]">
-                <div className="w-[48px] h-[48px] bg-[#100A36] rounded-[8px] flex items-center justify-center">
-                  <Image src="/images/products/genshin-logo.png" alt="Genshin Impact" width={48} height={48}></Image>
-                </div>
-                <div className="flex flex-col flex-1">
-                  <span className="text-[16px] font-semibold text-white">Genshin Impact</span>
-                  <span className="text-[12px] text-[#737AAE]">1 Day Subscription Plan, $2</span>
-                </div>
-              </div>
+              
 
               {/* Service Fee */}
               <div className="flex items-center justify-between">
@@ -257,7 +248,7 @@ export default function CheckoutPage() {
             {/* Need Help Card */}
             <div className="w-full flex flex-col gap-[10px]">
               <h3 
-                className="text-[36px] leading-[44px] font-bold text-white"
+                className="text-[24px] lg:ml-[30px] leading-[44px] font-bold text-white"
                 style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
               >
                 Need Help?
@@ -272,21 +263,36 @@ export default function CheckoutPage() {
                 <div className="w-full h-[170px] relative flex flex-col justify-between">
                   {/* First message bubble - left aligned */}
                   <div className="absolute top-0 left-0 w-[205px] h-[69px] bg-[#100A36] rounded-[10px] flex items-center px-4">
-                    <div className="flex flex-col gap-1">
-                      <div className="w-[150px] h-[8px] bg-[#1D1550] rounded"></div>
-                      <div className="w-[120px] h-[8px] bg-[#1D1550] rounded"></div>
-                      <div className="w-[80px] h-[8px] bg-[#1D1550] rounded"></div>
-                    </div>
+                    <svg width="205" height="69" viewBox="0 0 205 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 8C0 3.58172 3.58172 0 8 0H197C201.418 0 205 3.58172 205 8V61C205 65.4183 201.418 69 197 69H2C0.895429 69 0 68.1046 0 67V8Z" fill="#100A36" />
+                      <rect x="15" y="15" width="175" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="15" y="28" width="76" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="105" y="39" width="34" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="15" y="39" width="85" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="15" y="51" width="47" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="67" y="51" width="90" height="3" rx="1.5" fill="#737AAE" />
+                    </svg>
                   </div>
                   
                   {/* Second message bubble - right aligned */}
-                  <div className="absolute bottom-0 right-0 w-[227px] h-[81px] bg-[#1D1550] rounded-[10px] flex items-center px-4">
-                    <div className="flex flex-col gap-1">
-                      <div className="w-[110px] h-[8px] bg-[#271266] rounded"></div>
-                      <div className="w-[170px] h-[8px] bg-[#271266] rounded"></div>
-                      <div className="w-[140px] h-[8px] bg-[#271266] rounded"></div>
-                      <div className="w-[90px] h-[8px] bg-[#271266] rounded"></div>
-                    </div>
+                  <div className="absolute bottom-0 right-0 w-[227px] h-[81px]  rounded-[10px] flex items-center px-4">
+                    <svg width="227" height="81" viewBox="0 0 227 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 8C0 3.58172 3.58172 0 8 0H219C223.418 0 227 3.58172 227 8V79C227 80.1046 226.105 81 225 81H8.00001C3.58173 81 0 77.4183 0 73V8Z" fill="#100A36" />
+                      <rect x="15" y="15" width="64" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="85" y="15" width="31" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="123" y="15" width="68" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="197" y="15" width="12" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="15" y="28" width="30" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="51" y="28" width="99" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="15" y="39" width="18" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="39" y="39" width="59" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="104" y="39" width="69" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="179" y="39" width="33" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="15" y="51" width="41" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="61" y="51" width="89" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="15" y="63" width="121" height="3" rx="1.5" fill="#737AAE" />
+                      <rect x="142" y="63" width="51" height="3" rx="1.5" fill="#737AAE" />
+                    </svg>
                   </div>
                 </div>
 

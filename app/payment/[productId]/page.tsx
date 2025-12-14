@@ -75,8 +75,8 @@ export default function PaymentPage() {
           <div className="w-full lg:w-[647px] flex flex-col gap-[20px]">
             {/* Game Title & Description */}
             <div className="flex flex-col gap-[10px]">
-              <div className="flex items-center justify gap-3">
-                <div className="flex items-center gap-3">
+              <div className="flex items-center  gap-3">
+                <div className="flex items-center gap-3 ">
                   <Image 
                     src="/images/products/genshin-logo.png"
                     alt="Genshin Impact"
@@ -85,7 +85,7 @@ export default function PaymentPage() {
                     className="w-14 h-14 rounded-lg"
                   />
                   <h1 
-                    className="text-[36px] leading-[42px] font-bold text-white"
+                    className="text-[24px] lg:text-[36px] leading-[29px] lg:leading-[42px]  font-bold text-white"
                     style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
                   >
                     Genshin Impact
@@ -93,11 +93,11 @@ export default function PaymentPage() {
                 </div>
                 
                 {/* Undetected Badge */}
-                <div className="hidden lg:flex items-center gap-[10px] px-[20px] py-[5px] bg-[#0D2818] border border-[#1F4A30] rounded-[10px]">
+                <div className="flex items-center gap-[10px] px-[5px] lg:px-[20px] py-[5px] rounded-[10px]" style={{ backgroundColor: 'rgba(45, 242, 58, 0.1)' }}>
                   <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.49813 0C4.58438 0 4.67063 0.01875 4.74938 0.054375L8.28188 1.5525C8.69438 1.72688 9.00188 2.13375 9.00001 2.625C8.99063 4.485 8.22563 7.88813 4.99501 9.435C4.68188 9.585 4.31813 9.585 4.00501 9.435C0.772509 7.88813 0.00938353 4.485 8.52842e-06 2.625C-0.00186647 2.13375 0.305634 1.72688 0.718134 1.5525L4.24876 0.054375C4.32751 0.01875 4.41188 0 4.49813 0Z" fill="#2DF23A" />
                   </svg>
-                  <span className="text-[18px] leading-[160%] font-semibold text-[#4ADE80]">
+                  <span className="text-[12px] leading-[160%] font-semibold text-[#2df23a]">
                     Undetected
                   </span>
                 </div>
@@ -110,7 +110,7 @@ export default function PaymentPage() {
             {/* Tabs & Features */}
             <div className="flex flex-col gap-[20px]">
               {/* Tab Navigation */}
-              <div className="w-full h-[60px] bg-[#0D0525] rounded-[15px] px-[30px] flex items-center justify-between">
+              <div className="w-full h-[60px] bg-[#0D0525] rounded-[15px] px-[20px] lg:px-[30px] flex items-center justify-between">
                 <button 
                   onClick={() => setActiveTab('features')}
                   className={`h-[60px] px-[15px] flex items-center gap-[5px] group ${
@@ -119,31 +119,34 @@ export default function PaymentPage() {
                       : 'text-[#737AAE] hover:text-[#FFC260]'
                   } transition-colors`}
                 >
-                  <Image 
-                    src="/images/tabs/features.svg"
-                    alt=""
-                    width={16}
-                    height={16}
-                    className={activeTab === 'features' ? 'brightness-0 invert sepia saturate-[10] hue-rotate-[10deg]' : 'opacity-50 group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:saturate-[10] group-hover:hue-rotate-[10deg]'}
-                  />
-                  <span className={`text-[16px] leading-[160%] ${activeTab === 'features' ? 'text-white' : ''}`}>Features</span>
+                  <div className={activeTab === 'features' ? '' : 'opacity-50 group-hover:opacity-100'} style={activeTab === 'features' ? { filter: 'brightness(0) saturate(100%) invert(78%) sepia(61%) saturate(444%) hue-rotate(359deg) brightness(102%) contrast(101%)' } : {}}>
+                    <Image 
+                      src="/images/tabs/features.svg"
+                      alt=""
+                      width={16}
+                      height={16}
+                    />
+                  </div>
+                  <span className={`text-[12px] lg:text-[16px] leading-[160%] ${activeTab === 'features' ? 'text-white' : ''}`}>Features</span>
                 </button>
                 <button 
                   onClick={() => setActiveTab('system-requirements')}
-                  className={`h-[60px] px-[15px] flex items-center gap-[5px] group ${
+                  className={`h-[60px] px-[5px] flex items-center gap-[5px] group ${
                     activeTab === 'system-requirements' 
                       ? 'border-b border-[#FFC260]' 
                       : 'text-[#737AAE] hover:text-[#FFC260]'
                   } transition-colors`}
                 >
-                  <Image 
-                    src="/images/tabs/system.svg"
-                    alt=""
-                    width={16}
-                    height={16}
-                    className={activeTab === 'system-requirements' ? 'brightness-0 invert sepia saturate-[10] hue-rotate-[10deg]' : 'opacity-50 group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:saturate-[10] group-hover:hue-rotate-[10deg]'}
-                  />
-                  <span className={`text-[16px] leading-[160%] ${activeTab === 'system-requirements' ? 'text-white' : ''}`}>System Requirements</span>
+                  <div className={activeTab === 'system-requirements' ? '' : 'opacity-50 group-hover:opacity-100'} style={activeTab === 'system-requirements' ? { filter: 'brightness(0) saturate(100%) invert(78%) sepia(61%) saturate(444%) hue-rotate(359deg) brightness(102%) contrast(101%)' } : {}}>
+                    <Image 
+                      src="/images/tabs/system.svg"
+                      alt=""
+                      width={16}
+                      height={16}
+                    />
+                  </div>
+                  <span className={`text-[12px] lg:text-[16px] leading-[160%] hidden sm:inline ${activeTab === 'system-requirements' ? 'text-white' : ''}`}>System Requirements</span>
+                  <span className={`text-[12px] leading-[160%] sm:hidden ${activeTab === 'system-requirements' ? 'text-white' : ''}`}>System Requirements</span>
                 </button>
                 <button 
                   onClick={() => setActiveTab('media')}
@@ -153,14 +156,15 @@ export default function PaymentPage() {
                       : 'text-[#737AAE] hover:text-[#FFC260]'
                   } transition-colors`}
                 >
-                  <Image 
-                    src="/images/tabs/media.svg"
-                    alt=""
-                    width={16}
-                    height={16}
-                    className={activeTab === 'media' ? 'brightness-0 invert sepia saturate-[10] hue-rotate-[10deg]' : 'opacity-50 group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:saturate-[10] group-hover:hue-rotate-[10deg]'}
-                  />
-                  <span className={`text-[16px] leading-[160%] ${activeTab === 'media' ? 'text-white' : ''}`}>Media</span>
+                  <div className={activeTab === 'media' ? '' : 'opacity-50 group-hover:opacity-100'} style={activeTab === 'media' ? { filter: 'brightness(0) saturate(100%) invert(78%) sepia(61%) saturate(444%) hue-rotate(359deg) brightness(102%) contrast(101%)' } : {}}>
+                    <Image 
+                      src="/images/tabs/media.svg"
+                      alt=""
+                      width={16}
+                      height={16}
+                    />
+                  </div>
+                  <span className={`text-[12px] lg:text-[16px] leading-[160%] ${activeTab === 'media' ? 'text-white' : ''}`}>Media</span>
                 </button>
               </div>
 
@@ -388,11 +392,11 @@ export default function PaymentPage() {
           </div>
 
           {/* Right Column - Payment Selection */}
-          <div className="w-full lg:w-[453px] flex flex-col gap-[10px]">
-            <div className='flex gap-2 align-center '>
+          <div className="w-full lg:w-[453px] flex flex-col gap-[10px] ">
+            <div className='flex gap-2 align-center ml-[20px]'>
               <Image src="/images/tabs/select-plan.svg" width={40} height={40} alt="Select Plan" />
             <h2 
-              className="text-[36px] leading-[42px] font-bold text-white"
+              className="text-[24px] lg:text-[36px] leading-[42px] font-bold text-white"
               style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
             >
               Select Plan

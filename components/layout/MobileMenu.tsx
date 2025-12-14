@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
@@ -19,31 +20,14 @@ export function MobileMenu() {
 
   return (
     <>
-      {/* Hamburger Button */}
+      {/* Menu Button */}
       <button
         onClick={toggleMenu}
-        className="relative z-50 flex flex-col gap-1.5 w-8 h-8 items-center justify-center"
+        className="relative z-50 w-4 h-4 flex items-center justify-center"
         aria-label="Toggle menu"
         aria-expanded={isOpen}
       >
-        <span
-          className={cn(
-            'block w-6 h-0.5 bg-white transition-all duration-300',
-            isOpen && 'rotate-45 translate-y-2'
-          )}
-        />
-        <span
-          className={cn(
-            'block w-6 h-0.5 bg-white transition-all duration-300',
-            isOpen && 'opacity-0'
-          )}
-        />
-        <span
-          className={cn(
-            'block w-6 h-0.5 bg-white transition-all duration-300',
-            isOpen && '-rotate-45 -translate-y-2'
-          )}
-        />
+       <Image src="/images/mobile-header.svg" alt="Menu" width={24} height={24} />
       </button>
 
       {/* Mobile Menu Overlay */}

@@ -5,26 +5,34 @@ import { MobileMenu } from './MobileMenu';
 
 export function Header() {
   return (
-    <header className="w-full h-[56px] lg:h-[92px] bg-[#0D0525] flex items-center justify-center py-[12px] lg:py-[30px] px-4">
-      <div className="w-full max-w-[1132px] flex items-center justify-center gap-[50px]">
-        <Link href="/" className="flex items-center z-50">
-          <Image
-            src="/images/logo.png"
-            alt="UNICORE"
-            width={180}
-            height={32}
-            priority
-            className="h-8 w-auto"
-          />
-        </Link>
-        
-        {/* Desktop Navigation */}
-        <div className="hidden md:block">
+    <header className="w-full bg-[#0d0525] flex items-center justify-center">
+      <div className="w-full max-w-[1132px] flex items-center justify-between px-4 lg:px-0">
+        {/* Desktop Header */}
+        <div className="hidden md:flex items-center justify-center gap-[50px] w-full h-[92px] py-[30px]">
+          <Link href="/" className="flex items-center z-50">
+            <Image
+              src="/images/logo.png"
+              alt="UNICORE"
+              width={180}
+              height={32}
+              priority
+              className="h-8 w-auto"
+            />
+          </Link>
           <Navigation />
         </div>
-        
-        {/* Mobile Menu */}
-        <div className="md:hidden">
+
+        {/* Mobile Header */}
+        <div className="md:hidden flex items-center justify-between w-full h-[56px] py-[15px]">
+          <Link href="/" className="flex items-center z-50">
+            <Image
+              src="/images/mobile-logo.svg"
+              alt="UNICORE"
+              width={20}
+              height={24}
+              priority
+            />
+          </Link>
           <MobileMenu />
         </div>
       </div>

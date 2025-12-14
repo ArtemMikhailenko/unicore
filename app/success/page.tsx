@@ -15,9 +15,9 @@ export default function SuccessPage() {
   };
 
   return (
-    <main className="w-full min-h-screen bg-[#0A0218] flex flex-col items-center py-[50px] px-4 relative overflow-hidden">
+    <main className="w-full min-h-[70vh] bg-[#0A0218] flex flex-col items-center py-[50px] px-4 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 opacity-50">
+      <div className="absolute inset-0 opacity-90">
         <Image
           src="/images/error-bg.svg"
           alt=""
@@ -30,9 +30,9 @@ export default function SuccessPage() {
       
 
       {/* Content */}
-      <div className="w-full max-w-[550px] flex flex-col items-center relative z-10">
+      <div className="w-full max-w-[550px] flex flex-col items-center relative z-10 px-4">
         {/* Character Image */}
-        <div className="relative w-full h-[450px] flex items-end justify-center mb-[-120px]">
+        <div className="relative w-full h-[262px] md:h-[450px] flex items-end justify-center mb-[-10px] md:mb-[-80px]">
           <Image
             src="/images/success-character.png"
             alt="Success"
@@ -44,22 +44,20 @@ export default function SuccessPage() {
         </div>
 
         {/* Success Card */}
-        <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[25px] relative z-10">
+        <div className="w-full bg-[#0D0525] rounded-[20px] p-[20px] md:p-[30px] flex flex-col gap-[15px] md:gap-[25px] relative z-10">
           {/* Title with Icon */}
           <div className="flex items-start gap-[15px]">
             <div className="w-[40px] h-[40px] bg-[#FFC260] rounded-[10px] flex items-center justify-center flex-shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L14 8H20L15 12L17 18L12 14L7 18L9 12L4 8H10L12 2Z" fill="#6E3B08"/>
-              </svg>
+              <img src="/images/cake.svg" alt="" />
             </div>
-            <div className="flex flex-col gap-[5px]">
+            <div className="flex flex-col gap-[0px]">
               <h1 
-                className="text-[24px] leading-[32px] font-bold text-white"
+                className="text-[14px] md:text-[24px] leading-[26px] md:leading-[32px] font-bold text-white"
                 style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
               >
                 Thank you for purchase!
               </h1>
-              <p className="text-[14px] text-[#737AAE] leading-[160%]">
+              <p className="text-[10px] md:text-[14px] text-[#737AAE] leading-[160%]">
                 Save your key and read the instruction!
               </p>
             </div>
@@ -69,8 +67,8 @@ export default function SuccessPage() {
           <div className="w-full h-[1px] bg-[#737AAE] opacity-10" />
 
           {/* Product Key Input */}
-          <div className="w-full h-[46px] bg-[#100A36] border border-[#1D1550] rounded-[10px] px-[15px] flex items-center justify-between">
-            <span className="text-[14px] text-[#737AAE] leading-[160%] font-mono">
+          <div className="w-full h-[37px] md:h-[46px] bg-[#100A36] border border-[#1D1550] rounded-[10px] px-[15px] flex items-center justify-between">
+            <span className="text-[12px] md:text-[14px] text-[#737AAE] leading-[160%] font-mono">
               {productKey}
             </span>
             <button 
@@ -94,10 +92,10 @@ export default function SuccessPage() {
           <div className="flex gap-[10px]">
             <a
               href="#"
-              className="flex-1 h-[46px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] px-[30px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
+              className="flex-1 h-[37px] md:h-[46px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] px-[20px] md:px-[30px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
             >
               <span 
-                className="text-[18px] font-semibold text-[#6E3B08]"
+                className="text-[12px] md:text-[18px] font-semibold text-[#6E3B08] text-nowrap"
                 style={{ fontFamily: 'Source Sans 3, sans-serif' }}
               >
                 Read Instruction
@@ -105,10 +103,10 @@ export default function SuccessPage() {
             </a>
             <a
               href="#"
-              className="flex-1 h-[46px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] px-[30px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
+              className="flex-1 h-[37px] md:h-[46px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] px-[20px] md:px-[30px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
             >
               <span 
-                className="text-[18px] font-semibold text-[#6E3B08]"
+                className="text-[12px] md:text-[18px] font-semibold text-[#6E3B08] text-nowrap"
                 style={{ fontFamily: 'Source Sans 3, sans-serif' }}
               >
                 Contact Support
