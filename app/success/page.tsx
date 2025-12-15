@@ -22,7 +22,7 @@ export default function SuccessPage() {
           src="/images/error-bg.svg"
           alt=""
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>
@@ -30,21 +30,21 @@ export default function SuccessPage() {
       
 
       {/* Content */}
-      <div className="w-full max-w-[550px] flex flex-col items-center relative z-10 px-4">
+      <div className="w-full max-w-[850px] flex flex-col items-center relative z-10 px-4">
         {/* Character Image */}
-        <div className="relative w-full h-[262px] md:h-[450px] flex items-end justify-center mb-[-10px] md:mb-[-80px]">
+        <div className="relative w-full h-[262px] md:h-[550px] flex items-end justify-center mb-[-90px] md:mb-[-290px]">
           <Image
             src="/images/success-character.png"
             alt="Success"
-            width={500}
-            height={450}
-            className="object-contain object-bottom"
+            width={850}
+            height={350}
+            className="object-contain "
             priority
           />
         </div>
 
         {/* Success Card */}
-        <div className="w-full bg-[#0D0525] rounded-[20px] p-[20px] md:p-[30px] flex flex-col gap-[15px] md:gap-[25px] relative z-10">
+        <div className="w-full max-w-[550px] bg-[#0D0525] rounded-[20px] p-[20px] md:p-[30px] flex flex-col gap-[15px] md:gap-[25px] relative z-10">
           {/* Title with Icon */}
           <div className="flex items-start gap-[15px]">
             <div className="w-[40px] h-[40px] bg-[#FFC260] rounded-[10px] flex items-center justify-center flex-shrink-0">

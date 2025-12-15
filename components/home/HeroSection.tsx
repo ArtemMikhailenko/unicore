@@ -44,7 +44,7 @@ export function HeroSection() {
             </div>
             
             {/* Description */}
-            <p className="text-[12px] lg:text-base leading-[160%] text-[#737AAE] w-full max-w-[328px] md:max-w-none lg:w-[418px] text-center lg:text-left">
+            <p className="text-[12px] lg:text-base leading-[160%] text-[#737AAE] w-full max-w-[328px]  md:max-w-none lg:w-[418px] text-left lg:text-left">
               We offer premium cheats that are affordable, high-quality, easy-to-use, frequently updated, and part of a growing catalog.
             </p>
           </div>

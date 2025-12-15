@@ -42,7 +42,7 @@ export default function ResellerPage() {
   const resellerId = params.resellerId as string;
 
   return (
-    <main className="w-full min-h-[70vh] bg-[#0A0218] flex justify-center py-[30px] lg:py-[50px]">
+    <main className="w-full h-full bg-[#0A0218] flex justify-center py-[30px] lg:py-[50px]">
       <div className="w-full max-w-[1132px] flex flex-col gap-[30px] px-4 lg:px-0">
         {/* Breadcrumb Navigation */}
         <nav className="flex items-center gap-[5px]">

@@ -35,13 +35,13 @@ function ProductCard({ id, title, description, imageSrc, logo, className = '' }:
               className="w-12 h-12 rounded-lg object-cover"
             />
             <h3 
-              className="text-[24px] leading-[29px] font-bold text-white"
+              className="text-[16px] lg:text-[24px] leading-[29px] font-bold text-white"
               style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
             >
               {title}
             </h3>
           </div>
-          <p className="text-[14px] leading-[160%] text-[#737AAE]">
+          <p className="text-[12px] lg:text-[14px] leading-[160%] text-[#737AAE]">
             {description}
           </p>
         </div>
@@ -95,9 +95,9 @@ const products = [
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-[#0A0218] flex flex-col items-center px-4 py-[50px] relative overflow-hidden">
+    <main className="min-h-screen bg-[#0A0218] flex flex-col items-center px-4 py-[30px] lg:py-[50px] relative overflow-hidden">
       {/* Background Lines */}
-      <div className="absolute bottom-0 right-0 w-full h-[1098px] opacity-50">
+      <div className="absolute bottom-0 right-0 w-full h-[898px] opacity-90">
         <Image
           src="/images/poducts-bg.svg"
           alt=""

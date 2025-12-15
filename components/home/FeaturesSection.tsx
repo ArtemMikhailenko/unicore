@@ -12,14 +12,17 @@ interface FeatureCardProps {
 function FeatureCard({ title, mobileTitle, description, iconSrc, backgroundSrc, className = '' }: FeatureCardProps) {
   return (
     <div 
-      className="relative rounded-[20px] px-[30px] py-[20px] lg:py-[80px] overflow-hidden h-auto min-h-[150px] lg:h-[270px] w-full"
-      style={{
-        backgroundImage: `url(${backgroundSrc})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
+      className="relative rounded-[20px] px-[25px] py-[20px] lg:py-[80px] overflow-hidden h-auto min-h-[150px] lg:h-[270px] w-full bg-[#0D0525]"
     >
-     
+      {/* Background Image - Desktop only */}
+      <div 
+        className="hidden lg:block absolute inset-0 -z-0"
+        style={{
+          backgroundImage: `url(${backgroundSrc})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      />
       
       <div className="relative z-10 flex flex-col gap-[10px] items-center lg:items-start">
         <div className="flex lg:flex-col lg:flex-row items-center gap-[10px] lg:gap-3">
@@ -31,7 +34,7 @@ function FeatureCard({ title, mobileTitle, description, iconSrc, backgroundSrc, 
             className="w-[32px] h-[28px] rounded-lg"
           />
           <h3 
-            className="text-[16px] lg:text-[24px] leading-[19px] lg:leading-[29px] font-bold text-white text-center lg:text-left"
+            className="text-[16px] lg:text-[24px] leading-[19px] lg:leading-[29px] font-bold text-white text-left lg:text-left"
             style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
           >
             <span className="lg:hidden">{mobileTitle || title}</span>
@@ -133,7 +136,7 @@ export function FeaturesSection() {
         </h2>
 
         {/* Features Grid - Mobile: 2 columns, Desktop: flex wrap with specific widths */}
-        <div className="w-full grid grid-cols-2 gap-4 lg:flex lg:flex-wrap lg:gap-[32px]">
+        <div className="w-full grid grid-cols-2 gap-[16px] lg:flex lg:flex-wrap lg:gap-[32px]">
           <div className="lg:w-[582px]">
             <FeatureCard {...features[0]} />
           </div>

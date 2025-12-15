@@ -17,17 +17,17 @@ export function Footer() {
                 alt="UNICORE"
                 width={143}
                 height={32}
-                className="h-[86px] w-[103px] lg:h-8 lg:w-auto object-contain"
+                className="lg:h-[32px] w-[103px] lg:h-8 lg:w-auto object-contain"
               />
             </Link>
             
             {/* Social Icons */}
-            <div className="flex items-center gap-[16px] lg:hidden">
+            <div className="flex items-center gap-[10px] lg:hidden">
               <Link 
                 href="https://t.me/unicore" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[48px] h-[48px] flex items-center justify-center rounded-full  transition-colors"
+                className="w-[24px] h-[24px] flex items-center justify-center rounded-full  transition-colors"
                 aria-label="Telegram"
               >
                 <Image src="/images/telegram-icon.svg" alt="" width={24} height={24} />
@@ -36,14 +36,14 @@ export function Footer() {
                 href="https://discord.gg/unicore" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[48px] h-[48px] flex items-center justify-center rounded-full  transition-colors"
+                className="w-[24px] h-[24px] flex items-center justify-center rounded-full  transition-colors"
                 aria-label="Discord"
               >
                 <Image src="/images/discord-icon.svg" alt="" width={24} height={24} />
               </Link>
               <Link 
                 href="mailto:contact@unicore.com"
-                className="w-[48px] h-[48px] flex items-center justify-center rounded-full  transition-colors"
+                className="w-[24px] h-[24px] flex items-center justify-center rounded-full  transition-colors"
                 aria-label="Email"
               >
                 <Image src="/images/mail-icon.svg" alt="" width={24} height={24} />

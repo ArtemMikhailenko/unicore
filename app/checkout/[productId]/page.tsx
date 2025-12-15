@@ -177,15 +177,15 @@ export default function CheckoutPage() {
 
               {/* Service Fee */}
               <div className="flex items-center justify-between">
-                <span className="text-[14px] text-[#737AAE]">Service Fee</span>
-                <span className="text-[14px] text-[#737AAE]">10%</span>
+                <span className="text-[14px] lg:text-[18px] text-[#ffffff]">Service Fee</span>
+                <span className="text-[14px] lg:text-[16px] text-[#737AAE]">10%</span>
               </div>
 
               {/* Discount */}
               <div className="flex flex-col gap-[10px]">
                 <div className="flex items-center justify-between">
-                  <span className="text-[14px] text-[#737AAE]">Discount</span>
-                  <span className="text-[14px] text-[#737AAE]">25%</span>
+                  <span className="text-[14px] lg:text-[18px] text-[#ffffff]">Discount</span>
+                  <span className="text-[14px] lg:text-[16px] text-[#737AAE]">25%</span>
                 </div>
                 <div className="flex gap-[10px]">
                   <div className="relative flex-1">
@@ -215,10 +215,10 @@ export default function CheckoutPage() {
 
               {/* Total */}
               <div className="flex items-center justify-between pt-[20px] border-t border-[#1D1550]">
-                <span className="text-[18px] font-semibold text-white">Total</span>
+                <span className="text-[14px] lg:text-[18px] font-semibold text-white">Total</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-[18px] font-semibold text-[#737AAE] line-through">$2</span>
-                  <span className="text-[18px] font-semibold text-white">$10</span>
+                  <span className="text-[14px] lg:text-[18px] font-semibold text-[#737AAE] line-through">$2</span>
+                  <span className="text-[14px] lg:text-[18px] font-semibold text-white">$10</span>
                 </div>
               </div>
 

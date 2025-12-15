@@ -49,7 +49,7 @@ export function GamesSection() {
           >
             Choose Your Dream!
           </h2>
-          <p className="text-[12px] lg:text-[14px] leading-[160%] text-[#737AAE] max-w-[356px] text-center lg:text-left">
+          <p className="hidden lg:block text-[12px] lg:text-[14px] leading-[160%] text-[#737AAE] max-w-[356px] text-center lg:text-left">
             Select your game and try our product on your own right now!
           </p>
         </div>
