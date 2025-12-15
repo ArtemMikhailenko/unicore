@@ -164,13 +164,14 @@ export default function CheckoutPage() {
           {/* Right Column - Checkout */}
           <div className="w-full lg:w-[453px] flex flex-col gap-[20px]">
             {/* Checkout Card */}
-            <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[20px]">
-              <h2 
-                className="text-[24px] lg:text-[36px] leading-[44px] font-bold text-white"
+             <h2 
+                className="text-[24px] lg:text-[36px] leading-[44px] font-bold text-white ml-[25px] lg:ml-0"
                 style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
               >
                 Check Out
               </h2>
+            <div className="w-full bg-[#0D0525] rounded-[20px] p-[30px] flex flex-col gap-[20px]">
+             
 
               
 
@@ -248,7 +249,7 @@ export default function CheckoutPage() {
             {/* Need Help Card */}
             <div className="w-full flex flex-col gap-[10px]">
               <h3 
-                className="text-[24px] lg:ml-[30px] leading-[44px] font-bold text-white"
+                className="text-[24px] lg:ml-[30px] leading-[44px] font-bold text-white ml-[25px] lg:ml-0"
                 style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
               >
                 Need Help?
