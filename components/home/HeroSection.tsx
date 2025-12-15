@@ -3,8 +3,20 @@ import Link from 'next/link';
 
 export function HeroSection() {
   return (
-    <section className="w-full flex items-center justify-center py-[30px] lg:py-[70px] px-4">
-      <div className="w-full max-w-[1132px]  lg:min-h-[489px] flex flex-col lg:flex-row items-center justify-between gap-8">
+    <section className="w-full flex items-center justify-center py-[30px] lg:py-[70px] px-4 relative">
+      {/* Mobile Background Image */}
+      <div className="absolute inset-0 lg:hidden flex items-center justify-center pointer-events-none max-w-[80%] mx-auto">
+        <Image
+          src="/images/flowers.png"
+          alt=""
+          width={500}
+          height={250}
+          className="object-contain"
+          priority
+        />
+      </div>
+      
+      <div className="w-full max-w-[1132px]  lg:min-h-[489px] flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
         {/* Text and Button */}
         <div className="flex flex-col items-center lg:items-start gap-[10px] lg:gap-[30px] w-full lg:w-[418px]">
           {/* Text Content */}
@@ -32,7 +44,7 @@ export function HeroSection() {
             </div>
             
             {/* Description */}
-            <p className="text-[12px] lg:text-base leading-[160%] text-[#737AAE] w-full lg:w-[418px] text-center lg:text-left">
+            <p className="text-[12px] lg:text-base leading-[160%] text-[#737AAE] w-full max-w-[328px] md:max-w-none lg:w-[418px] text-center lg:text-left">
               We offer premium cheats that are affordable, high-quality, easy-to-use, frequently updated, and part of a growing catalog.
             </p>
           </div>

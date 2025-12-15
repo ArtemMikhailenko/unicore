@@ -12,7 +12,7 @@ interface FeatureCardProps {
 function FeatureCard({ title, mobileTitle, description, iconSrc, backgroundSrc, className = '' }: FeatureCardProps) {
   return (
     <div 
-      className="relative rounded-[20px] px-[30px] py-[20px] lg:py-[80px] overflow-hidden h-auto lg:h-[270px] w-full"
+      className="relative rounded-[20px] px-[30px] py-[20px] lg:py-[80px] overflow-hidden h-auto min-h-[150px] lg:h-[270px] w-full"
       style={{
         backgroundImage: `url(${backgroundSrc})`,
         backgroundSize: 'cover',
