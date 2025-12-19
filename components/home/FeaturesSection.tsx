@@ -12,7 +12,7 @@ interface FeatureCardProps {
 function FeatureCard({ title, mobileTitle, description, iconSrc, backgroundSrc, className = '' }: FeatureCardProps) {
   return (
     <div 
-      className="relative rounded-[20px] px-[25px] py-[20px] lg:py-[80px] overflow-hidden h-auto min-h-[150px] lg:h-[270px] w-full bg-[#0D0525]"
+      className="relative rounded-[20px] px-[25px] 2xl:px-[35px] py-[20px] lg:py-[80px] 2xl:py-[100px] overflow-hidden h-auto min-h-[150px] lg:h-[270px] 2xl:h-[350px] w-full bg-[#0D0525]"
     >
       {/* Background Image - Desktop only */}
       <div 
@@ -31,17 +31,17 @@ function FeatureCard({ title, mobileTitle, description, iconSrc, backgroundSrc, 
             alt={title}
             width={32}
             height={28}
-            className="w-[32px] h-[28px] rounded-lg"
+            className="w-[32px] h-[28px] 2xl:w-[42px] 2xl:h-[38px] rounded-lg"
           />
           <h3 
-            className="text-[16px] lg:text-[24px] leading-[19px] lg:leading-[29px] font-bold text-white text-left lg:text-left"
+            className="text-[16px] lg:text-[24px] 2xl:text-[32px] leading-[19px] lg:leading-[29px] 2xl:leading-[40px] font-bold text-white text-left lg:text-left"
             style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
           >
             <span className="lg:hidden">{mobileTitle || title}</span>
             <span className="hidden lg:inline">{title}</span>
           </h3>
         </div>
-        <p className="text-[12px] lg:text-[14px] leading-[160%] text-[#737AAE] text-center lg:text-left line-clamp-3 lg:line-clamp-none">
+        <p className="text-[12px] lg:text-[14px] 2xl:text-[18px] leading-[160%] text-[#737AAE] text-center lg:text-left line-clamp-3 lg:line-clamp-none">
           {description}
         </p>
       </div>
@@ -125,46 +125,46 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="w-full flex items-center justify-center px-4 py-[30px] lg:py-[50px]">
-      <div className="w-full max-w-[1002px] flex flex-col items-center lg:items-start gap-[25px]">
+    <section className="w-full flex items-center justify-center px-4 lg:px-[10%] py-[30px] lg:py-[50px] 2xl:py-[70px]">
+      <div className="w-full max-w-[1002px] lg:max-w-none flex flex-col items-center lg:items-start gap-[25px] 2xl:gap-[35px]">
         {/* Title */}
         <h2 
-          className="text-[24px] lg:text-[36px] leading-[29px] lg:leading-[44px] mx-auto font-bold text-white text-center"
+          className="text-[24px] lg:text-[36px] 2xl:text-[48px] leading-[29px] lg:leading-[44px] 2xl:leading-[56px] mx-auto font-bold text-white text-center"
           style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
         >
           See Our Unique Features!
         </h2>
 
         {/* Features Grid - Mobile: 2 columns, Desktop: flex wrap with specific widths */}
-        <div className="w-full grid grid-cols-2 gap-[16px] lg:flex lg:flex-wrap lg:gap-[32px]">
-          <div className="lg:w-[582px]">
+        <div className="w-full grid grid-cols-2 gap-[16px] lg:flex lg:flex-wrap lg:gap-[32px] 2xl:gap-[40px]">
+          <div className="lg:w-[58%]">
             <FeatureCard {...features[0]} />
           </div>
-          <div className="lg:w-[388px]">
+          <div className="lg:w-[38%]">
             <FeatureCard {...features[1]} />
           </div>
-          <div className="lg:w-[485px]">
+          <div className="lg:w-[48%]">
             <FeatureCard {...features[2]} />
           </div>
-          <div className="lg:w-[485px]">
+          <div className="lg:w-[48%]">
             <FeatureCard {...features[3]} />
           </div>
-          <div className="lg:w-[582px]">
+          <div className="lg:w-[58%]">
             <FeatureCard {...features[4]} />
           </div>
-          <div className="lg:w-[387px]">
+          <div className="lg:w-[38%]">
             <FeatureCard {...features[5]} />
           </div>
-          <div className="lg:w-[388px]">
+          <div className="lg:w-[38%]">
             <FeatureCard {...features[6]} />
           </div>
-          <div className="lg:w-[582px]">
+          <div className="lg:w-[58%]">
             <FeatureCard {...features[7]} />
           </div>
-          <div className="lg:w-[582px]">
+          <div className="lg:w-[58%]">
             <FeatureCard {...features[8]} />
           </div>
-          <div className="lg:w-[388px]">
+          <div className="lg:w-[38%]">
             <FeatureCard {...features[9]} />
           </div>
         </div>

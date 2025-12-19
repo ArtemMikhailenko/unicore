@@ -13,13 +13,13 @@ export function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center gap-8" aria-label="Main navigation">
+    <nav className="flex items-center gap-8 2xl:gap-12" aria-label="Main navigation">
       {navigationItems.map((item) => (
         <Link
           key={item.href}
           href={item.href}
           className={cn(
-            'text-base font-medium transition-colors hover:text-white',
+            'text-base 2xl:text-lg font-medium transition-colors hover:text-white',
             pathname === item.href
               ? 'text-white'
               : 'text-white/70'

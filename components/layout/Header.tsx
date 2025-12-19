@@ -6,9 +6,9 @@ import { MobileMenu } from './MobileMenu';
 export function Header() {
   return (
     <header className="w-full bg-[#0d0525] flex items-center justify-center">
-      <div className="w-full max-w-[1132px] flex items-center justify-between px-4 lg:px-0">
+      <div className="w-full max-w-[1132px] lg:max-w-none lg:px-[10%] flex items-center justify-between px-4">
         {/* Desktop Header */}
-        <div className="hidden md:flex items-center justify-center gap-[50px] w-full h-[92px] py-[30px]">
+        <div className="hidden md:flex items-center justify-center gap-[50px] 2xl:gap-[70px] w-full h-[92px] 2xl:h-[120px] py-[30px] 2xl:py-[40px]">
           <Link href="/" className="flex items-center z-50">
             <Image
               src="/images/logo.png"
@@ -16,7 +16,7 @@ export function Header() {
               width={180}
               height={32}
               priority
-              className="h-8 w-auto"
+              className="h-8 2xl:h-10 w-auto"
             />
           </Link>
           <Navigation />
