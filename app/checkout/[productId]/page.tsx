@@ -11,48 +11,36 @@ const paymentMethods = [
     name: 'Coinbase',
     description: 'Crypto, Credit Cards',
     logo: '/images/payment/coinbase.png',
-    bgColor: 'bg-[#100A36]',
-    borderColor: 'border-[#1D1550]',
   },
   {
     id: 'pzmpay',
     name: 'PZMPay',
     description: 'Bank Cards',
     logo: '/images/payment/pzmpay.png',
-    bgColor: 'bg-[#1C0C66]',
-    borderColor: 'border-[#24186E]',
   },
   {
     id: 'stripe',
     name: 'Stripe',
     description: 'EU, USA, UA',
     logo: '/images/payment/stripe.png',
-    bgColor: 'bg-[#271266]',
-    borderColor: 'border-[#392A93]',
   },
   {
     id: 'funpay',
     name: 'FunPay',
     description: 'Worldwide (RU, USA, UA, KZ)',
     logo: '/images/payment/finpay.png',
-    bgColor: 'bg-[#100A36]',
-    borderColor: 'border-[#271266]',
   },
   {
     id: 'freekassa',
     name: 'FreeKassa',
     description: 'RU, Steam Pay, Perfect Money',
     logo: '/images/payment/freekassa.png',
-    bgColor: 'bg-[#100A36]',
-    borderColor: 'border-[#1D1550]',
   },
   {
     id: 'resellers',
     name: 'Resellers',
     description: 'Paypal, Stripe, Alipay, ...',
     logo: '/images/payment/resselers.png',
-    bgColor: 'bg-[#100A36]',
-    borderColor: 'border-[#1D1550]',
   },
 ];
 
@@ -135,9 +123,11 @@ export default function CheckoutPage() {
                 <button
                   key={method.id}
                   onClick={() => setSelectedMethod(method.id)}
-                  className={`w-full h-[84px] 2xl:h-[100px] 2xl:h-[100px] ${method.bgColor} border ${
-                    selectedMethod === method.id ? 'border-[#FFC260]' : method.borderColor
-                  } rounded-[15px] p-[20px] 2xl:p-[25px] flex items-center gap-[10px] 2xl:gap-[15px] hover:border-[#FFC260] transition-colors`}
+                  className={`w-full h-[84px] 2xl:h-[100px] rounded-[15px] p-[20px] 2xl:p-[25px] flex items-center gap-[10px] 2xl:gap-[10px] border border-transparent transition-colors overflow-hidden ${
+                    selectedMethod === method.id 
+                      ? 'bg-[#1d1550]' 
+                      : 'bg-[#100a36] hover:bg-[#1c0c4d]'
+                  }`}
                 >
                   <div className="w-[32px] h-[32px] 2xl:w-[40px] 2xl:h-[40px] rounded-[8px] overflow-hidden flex-shrink-0">
                     <Image
@@ -148,8 +138,8 @@ export default function CheckoutPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex flex-col items-start justify-center flex-1 min-w-0">
-                    <span className="text-[18px] 2xl:text-[22px] font-semibold text-white leading-none">
+                  <div className="flex flex-col items-start justify-start flex-1 min-w-0 overflow-hidden">
+                    <span className="text-[18px] 2xl:text-[22px] font-semibold text-white leading-none truncate ">
                       {method.name}
                     </span>
                     <span className="text-[8px] 2xl:text-[10px] text-[#737AAE] leading-none mt-[6px] truncate ">
