@@ -19,7 +19,7 @@ export default function Home() {
         alt=""
         width={800}
         height={800}
-        className="hidden lg:block absolute top-0 left-0 pointer-events-none z-0 2xl:w-[1200px] 2xl:h-[1200px] 3xl:w-[1600px] 3xl:h-[1600px]"
+        className="hidden lg:block absolute top-0 left-0 pointer-events-none z-0 2xl:w-[1200px] 2xl:h-[1200px] 3xl:w-[1120px] 3xl:h-[1120px]"
         priority
         quality={85}
       />
@@ -28,7 +28,7 @@ export default function Home() {
         alt=""
         width={800}
         height={800}
-        className="hidden lg:block absolute top-1/2 right-0 -translate-y-1/2 pointer-events-none z-0 2xl:w-[1200px] 2xl:h-[1200px] 3xl:w-[1600px] 3xl:h-[1600px]"
+        className="hidden lg:block absolute top-1/2 right-0 -translate-y-1/2 pointer-events-none z-0 2xl:w-[1200px] 2xl:h-[1200px] 3xl:w-[1120px] 3xl:h-[1120px]"
         loading="lazy"
         quality={85}
       />
@@ -37,7 +37,7 @@ export default function Home() {
         alt=""
         width={800}
         height={800}
-        className="hidden lg:block absolute bottom-0 left-0 pointer-events-none z-0 2xl:w-[1200px] 2xl:h-[1200px] 3xl:w-[1600px] 3xl:h-[1600px]"
+        className="hidden lg:block absolute bottom-0 left-0 pointer-events-none z-0 2xl:w-[1200px] 2xl:h-[1200px] 3xl:w-[1120px] 3xl:h-[1120px]"
         loading="lazy"
         quality={85}
       />

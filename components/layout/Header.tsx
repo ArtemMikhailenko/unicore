@@ -8,7 +8,7 @@ export function Header() {
     <header className="w-full bg-[#0d0525] flex items-center justify-center">
       <div className="w-full max-w-[1132px] lg:max-w-none lg:px-[20%] flex items-center justify-between px-4">
         {/* Desktop Header */}
-        <div className="hidden md:flex items-center justify-center gap-[50px] 2xl:gap-[100px] 3xl:gap-[180px] w-full h-[92px] 2xl:h-[150px] 3xl:h-[240px] py-[30px] 2xl:py-[50px] 3xl:py-[80px]">
+        <div className="hidden md:flex items-center justify-center gap-[50px] 2xl:gap-[100px] 3xl:gap-[126px] w-full h-[92px] 2xl:h-[150px] 3xl:h-[168px] py-[30px] 2xl:py-[50px] 3xl:py-[56px]">
           <Link href="/" className="flex items-center z-50">
             <Image
               src="/images/logo.png"

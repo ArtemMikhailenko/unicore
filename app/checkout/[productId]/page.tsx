@@ -62,13 +62,13 @@ export default function CheckoutPage() {
   };
 
   return (
-    <main className="w-full min-h-screen bg-[#0A0218] flex justify-center py-[50px] 2xl:py-[70px] 3xl:py-[120px]">
-      <div className="w-full max-w-[1132px] lg:max-w-none lg:px-[20%] flex flex-col gap-[30px] 2xl:gap-[40px] 3xl:gap-[80px] px-4">
+    <main className="w-full min-h-screen bg-[#0A0218] flex justify-center py-[50px] 2xl:py-[70px] 3xl:py-[84px]">
+      <div className="w-full max-w-[1132px] lg:max-w-none lg:px-[20%] flex flex-col gap-[30px] 2xl:gap-[40px] 3xl:gap-[56px] px-4">
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-[15px] 3xl:gap-[25px]">
+        <nav className="flex items-center gap-[15px] 3xl:gap-[18px]">
           <Link 
             href="/products"
-            className="text-[12px] md:text-[16px] 2xl:text-[18px] 3xl:text-[32px] leading-[160%] text-[#737AAE] hover:text-white transition-colors"
+            className="text-[12px] md:text-[16px] 2xl:text-[18px] 3xl:text-[22px] leading-[160%] text-[#737AAE] hover:text-white transition-colors"
           >
             Products
           </Link>
@@ -77,59 +77,59 @@ export default function CheckoutPage() {
           </svg>
           <Link 
             href="/payment/genshin-impact"
-            className="text-[12px] md:text-[16px] 2xl:text-[18px] 3xl:text-[32px] leading-[160%] text-[#737AAE] hover:text-white transition-colors"
+            className="text-[12px] md:text-[16px] 2xl:text-[18px] 3xl:text-[22px] leading-[160%] text-[#737AAE] hover:text-white transition-colors"
           >
             Genshin Impact
           </Link>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="3xl:w-6 3xl:h-6">
             <path d="M7.8 6L4.2 9.6L3 8.4L5.4 6L3 3.6L4.2 2.4L7.8 6Z" fill="#737AAE"/>
           </svg>
-          <span className="text-[12px] md:text-[16px] 2xl:text-[18px] 3xl:text-[32px] leading-[160%] text-white">
+          <span className="text-[12px] md:text-[16px] 2xl:text-[18px] 3xl:text-[22px] leading-[160%] text-white">
             Payment Methods
           </span>
         </nav>
 
         {/* Main Content */}
-        <div className="flex flex-col lg:flex-row gap-[32px] 2xl:gap-[48px] 3xl:gap-[90px]">
+        <div className="flex flex-col lg:flex-row gap-[32px] 2xl:gap-[48px] 3xl:gap-[63px]">
           {/* Left Column - Payment Methods */}
-          <div className="w-full lg:w-[60%] flex flex-col gap-[20px] 2xl:gap-[30px] 3xl:gap-[50px]">
+          <div className="w-full lg:w-[60%] flex flex-col gap-[20px] 2xl:gap-[30px] 3xl:gap-[35px]">
             {/* Product Info Header */}
-            <div className="flex items-center gap-[15px] 2xl:gap-[20px] 3xl:gap-[40px]">
-              <div className="w-[42px] h-[42px] md:w-[64px] md:h-[64px] 2xl:w-[80px] 2xl:h-[80px] 3xl:w-[140px] 3xl:h-[140px] bg-[#0D0525] rounded-[15px] 3xl:rounded-[25px] flex items-center justify-center overflow-hidden">
+            <div className="flex items-center gap-[15px] 2xl:gap-[20px] 3xl:gap-[28px]">
+              <div className="w-[42px] h-[42px] md:w-[64px] md:h-[64px] 2xl:w-[80px] 2xl:h-[80px] 3xl:w-[98px] 3xl:h-[98px] bg-[#0D0525] rounded-[15px] 3xl:rounded-[18px] flex items-center justify-center overflow-hidden">
                 <Image
                   src="/images/products/genshin-logo.png"
                   alt="Genshin Impact"
                   width={64}
                   height={64}
-                  className="w-[42px] h-[42px] md:w-[64px] md:h-[64px] 2xl:w-[80px] 2xl:h-[80px] 3xl:w-[140px] 3xl:h-[140px] object-cover"
+                  className="w-[42px] h-[42px] md:w-[64px] md:h-[64px] 2xl:w-[80px] 2xl:h-[80px] 3xl:w-[98px] 3xl:h-[98px] object-cover"
                 />
               </div>
-              <div className="flex flex-col md:gap-[5px] 3xl:gap-[15px]">
+              <div className="flex flex-col md:gap-[5px] 3xl:gap-[10px]">
                 <h1 
-                  className="text-[14px] lg:text-[32px] 2xl:text-[42px] 3xl:text-[72px] md:leading-[44px] 2xl:leading-[52px] 3xl:leading-[86px] font-bold text-white"
+                  className="text-[14px] lg:text-[32px] 2xl:text-[42px] 3xl:text-[50px] md:leading-[44px] 2xl:leading-[52px] 3xl:leading-[60px] font-bold text-white"
                   style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
                 >
                   Genshin Impact
                 </h1>
-                <span className="text-[12px] text-[16px] 2xl:text-[18px] 3xl:text-[32px] text-[#737AAE] leading-[160%]">
+                <span className="text-[12px] text-[16px] 2xl:text-[18px] 3xl:text-[22px] text-[#737AAE] leading-[160%]">
                   1 Day Subscription Plan, $2
                 </span>
               </div>
             </div>
 
             {/* Payment Methods Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-[20px] 2xl:gap-[25px] 3xl:gap-[50px]">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-[20px] 2xl:gap-[25px] 3xl:gap-[35px]">
               {paymentMethods.map((method) => (
                 <button
                   key={method.id}
                   onClick={() => setSelectedMethod(method.id)}
-                  className={`w-full h-[84px] 2xl:h-[100px] 3xl:h-[180px] rounded-[15px] 3xl:rounded-[25px] p-[20px] 2xl:p-[25px] 3xl:p-[45px] flex items-center gap-[10px] 2xl:gap-[10px] 3xl:gap-[25px] border border-transparent transition-colors overflow-hidden ${
+                  className={`w-full h-[84px] 2xl:h-[100px] 3xl:h-[126px] rounded-[15px] 3xl:rounded-[18px] p-[20px] 2xl:p-[25px] 3xl:p-[31px] flex items-center gap-[10px] 2xl:gap-[10px] 3xl:gap-[18px] border border-transparent transition-colors overflow-hidden ${
                     selectedMethod === method.id 
                       ? 'bg-[#1d1550]' 
                       : 'bg-[#100a36] hover:bg-[#1c0c4d]'
                   }`}
                 >
-                  <div className="w-[32px] h-[32px] 2xl:w-[40px] 2xl:h-[40px] 3xl:w-[72px] 3xl:h-[72px] rounded-[8px] 3xl:rounded-[16px] overflow-hidden flex-shrink-0">
+                  <div className="w-[32px] h-[32px] 2xl:w-[40px] 2xl:h-[40px] 3xl:w-[50px] 3xl:h-[50px] rounded-[8px] 3xl:rounded-[11px] overflow-hidden flex-shrink-0">
                     <Image
                       src={method.logo}
                       alt={method.name}
@@ -139,10 +139,10 @@ export default function CheckoutPage() {
                     />
                   </div>
                   <div className="flex flex-col items-start justify-start flex-1 min-w-0 overflow-hidden">
-                    <span className="text-[18px] 2xl:text-[22px] 3xl:text-[40px] font-semibold text-white leading-none truncate ">
+                    <span className="text-[18px] 2xl:text-[22px] 3xl:text-[28px] font-semibold text-white leading-none truncate ">
                       {method.name}
                     </span>
-                    <span className="text-[8px] 2xl:text-[10px] 3xl:text-[20px] text-[#737AAE] leading-none mt-[6px] 3xl:mt-[15px] truncate ">
+                    <span className="text-[8px] 2xl:text-[10px] 3xl:text-[14px] text-[#737AAE] leading-none mt-[6px] 3xl:mt-[10px] truncate ">
                       {method.description}
                     </span>
                   </div>
@@ -152,42 +152,42 @@ export default function CheckoutPage() {
           </div>
 
           {/* Right Column - Checkout */}
-          <div className="w-full lg:w-[40%] flex flex-col gap-[20px] 2xl:gap-[30px] 3xl:gap-[50px]">
+          <div className="w-full lg:w-[40%] flex flex-col gap-[20px] 2xl:gap-[30px] 3xl:gap-[35px]">
             {/* Checkout Card */}
              <h2 
-                className="text-[24px] lg:text-[36px] 2xl:text-[48px] 3xl:text-[80px] leading-[44px] 2xl:leading-[56px] 3xl:leading-[96px] font-bold text-white ml-[25px] lg:ml-0"
+                className="text-[24px] lg:text-[36px] 2xl:text-[48px] 3xl:text-[56px] leading-[44px] 2xl:leading-[56px] 3xl:leading-[67px] font-bold text-white ml-[25px] lg:ml-0"
                 style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
               >
                 Check Out
               </h2>
-            <div className="w-full bg-[#0D0525] rounded-[20px] 3xl:rounded-[35px] p-[30px] 2xl:p-[40px] 3xl:p-[80px] flex flex-col gap-[20px] 2xl:gap-[25px] 3xl:gap-[50px]">
+            <div className="w-full bg-[#0D0525] rounded-[20px] 3xl:rounded-[24px] p-[30px] 2xl:p-[40px] 3xl:p-[56px] flex flex-col gap-[20px] 2xl:gap-[25px] 3xl:gap-[35px]">
              
 
               
 
               {/* Service Fee */}
               <div className="flex items-center justify-between">
-                <span className="text-[14px] lg:text-[18px] 2xl:text-[22px] 3xl:text-[40px] text-[#ffffff]">Service Fee</span>
-                <span className="text-[14px] lg:text-[16px] 2xl:text-[20px] 3xl:text-[36px] text-[#737AAE]">10%</span>
+                <span className="text-[14px] lg:text-[18px] 2xl:text-[22px] 3xl:text-[28px] text-[#ffffff]">Service Fee</span>
+                <span className="text-[14px] lg:text-[16px] 2xl:text-[20px] 3xl:text-[25px] text-[#737AAE]">10%</span>
               </div>
 
               {/* Discount */}
-              <div className="flex flex-col gap-[10px] 3xl:gap-[20px]">
+              <div className="flex flex-col gap-[10px] 3xl:gap-[14px]">
                 <div className="flex items-center justify-between">
-                  <span className="text-[14px] lg:text-[18px] 2xl:text-[22px] 3xl:text-[40px] text-[#ffffff]">Discount</span>
-                  <span className="text-[14px] lg:text-[16px] 2xl:text-[20px] 3xl:text-[36px] text-[#737AAE]">25%</span>
+                  <span className="text-[14px] lg:text-[18px] 2xl:text-[22px] 3xl:text-[28px] text-[#ffffff]">Discount</span>
+                  <span className="text-[14px] lg:text-[16px] 2xl:text-[20px] 3xl:text-[25px] text-[#737AAE]">25%</span>
                 </div>
-                <div className="flex gap-[10px] 3xl:gap-[20px]">
+                <div className="flex gap-[10px] 3xl:gap-[14px]">
                   <div className="relative flex-1">
                     <input
                       type="text"
                       value={discountCode}
                       onChange={(e) => setDiscountCode(e.target.value)}
                       placeholder="Enter discount code"
-                      className="w-full h-[46px] 2xl:h-[56px] 3xl:h-[100px] bg-[#100A36] border border-[#1D1550] rounded-[10px] 3xl:rounded-[18px] pl-[15px] 3xl:pl-[30px] pr-[35px] text-[14px] 2xl:text-[16px] 3xl:text-[30px] text-white placeholder:text-[#737AAE] focus:border-[#FFC260] outline-none transition-colors"
+                      className="w-full h-[46px] 2xl:h-[56px] 3xl:h-[70px] bg-[#100A36] border border-[#1D1550] rounded-[10px] 3xl:rounded-[13px] pl-[15px] 3xl:pl-[21px] pr-[35px] text-[14px] 2xl:text-[16px] 3xl:text-[21px] text-white placeholder:text-[#737AAE] focus:border-[#FFC260] outline-none transition-colors"
                     />
                     <svg 
-                      className="absolute right-[15px] 3xl:right-[25px] top-1/2 -translate-y-1/2 pointer-events-none 3xl:w-[24px] 3xl:h-[24px]" 
+                      className="absolute right-[15px] 3xl:right-[18px] top-1/2 -translate-y-1/2 pointer-events-none 3xl:w-[17px] 3xl:h-[17px]" 
                       width="12" 
                       height="12" 
                       viewBox="0 0 12 12" 
@@ -197,18 +197,18 @@ export default function CheckoutPage() {
                       <path d="M2.4002 1.20001C1.73832 1.20001 1.2002 1.73814 1.2002 2.40001V8.40001C1.2002 9.06189 1.73832 9.60001 2.4002 9.60001H4.5002V5.40001C4.5002 4.23939 5.43957 3.30001 6.6002 3.30001H7.8002V2.40001C7.8002 1.73814 7.26207 1.20001 6.6002 1.20001H2.4002ZM5.8502 3.30001H3.1502C2.90082 3.30001 2.7002 3.09939 2.7002 2.85001C2.7002 2.60064 2.90082 2.40001 3.1502 2.40001H5.8502C6.09957 2.40001 6.3002 2.60064 6.3002 2.85001C6.3002 3.09939 6.09957 3.30001 5.8502 3.30001ZM6.6002 4.20001C5.93832 4.20001 5.4002 4.73814 5.4002 5.40001V9.60001C5.4002 10.2619 5.93832 10.8 6.6002 10.8H9.6002C10.2621 10.8 10.8002 10.2619 10.8002 9.60001V6.49689C10.8002 6.17814 10.6746 5.87251 10.4496 5.64751L9.3527 4.55064C9.1277 4.32564 8.82207 4.20001 8.50332 4.20001H6.6002Z" fill="#737AAE" />
                     </svg>
                   </div>
-                  <button className="w-[100px] 2xl:w-[120px] 3xl:w-[200px] h-[46px] 2xl:h-[56px] 3xl:h-[100px] bg-[#FFC260] rounded-[10px] 3xl:rounded-[18px] text-[16px] 2xl:text-[18px] 3xl:text-[32px] font-semibold text-[#6E3B08] hover:bg-[#FFD280] transition-colors">
+                  <button className="w-[100px] 2xl:w-[120px] 3xl:w-[140px] h-[46px] 2xl:h-[56px] 3xl:h-[70px] bg-[#FFC260] rounded-[10px] 3xl:rounded-[13px] text-[16px] 2xl:text-[18px] 3xl:text-[22px] font-semibold text-[#6E3B08] hover:bg-[#FFD280] transition-colors">
                     Apply
                   </button>
                 </div>
               </div>
 
               {/* Total */}
-              <div className="flex items-center justify-between pt-[20px] 3xl:pt-[40px] border-t border-[#1D1550]">
-                <span className="text-[14px] lg:text-[18px] 2xl:text-[22px] 3xl:text-[40px] font-semibold text-white">Total</span>
+              <div className="flex items-center justify-between pt-[20px] 3xl:pt-[28px] border-t border-[#1D1550]">
+                <span className="text-[14px] lg:text-[18px] 2xl:text-[22px] 3xl:text-[28px] font-semibold text-white">Total</span>
                 <div className="flex items-center gap-2 3xl:gap-4">
-                  <span className="text-[14px] lg:text-[18px] 2xl:text-[22px] 3xl:text-[40px] font-semibold text-[#737AAE] line-through">$2</span>
-                  <span className="text-[14px] lg:text-[18px] 2xl:text-[22px] 3xl:text-[40px] font-semibold text-white">$10</span>
+                  <span className="text-[14px] lg:text-[18px] 2xl:text-[22px] 3xl:text-[28px] font-semibold text-[#737AAE] line-through">$2</span>
+                  <span className="text-[14px] lg:text-[18px] 2xl:text-[22px] 3xl:text-[28px] font-semibold text-white">$10</span>
                 </div>
               </div>
 
@@ -218,35 +218,35 @@ export default function CheckoutPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full h-[46px] 2xl:h-[56px] 3xl:h-[100px] bg-[#100A36] border border-[#1D1550] rounded-[10px] 3xl:rounded-[18px] px-[15px] 3xl:px-[30px] text-[14px] 2xl:text-[16px] 3xl:text-[30px] text-white placeholder:text-[#737AAE] focus:border-[#FFC260] outline-none transition-colors"
+                className="w-full h-[46px] 2xl:h-[56px] 3xl:h-[70px] bg-[#100A36] border border-[#1D1550] rounded-[10px] 3xl:rounded-[13px] px-[15px] 3xl:px-[21px] text-[14px] 2xl:text-[16px] 3xl:text-[21px] text-white placeholder:text-[#737AAE] focus:border-[#FFC260] outline-none transition-colors"
               />
 
               {/* Go to Payment Button */}
               <button 
                 onClick={handleGoToPayment}
                 disabled={!selectedMethod}
-                className="w-full h-[46px] 2xl:h-[56px] 3xl:h-[100px] bg-[#FFC260] rounded-[10px] 3xl:rounded-[18px] text-[18px] 2xl:text-[22px] 3xl:text-[40px] font-semibold text-[#6E3B08] hover:bg-[#FFD280] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full h-[46px] 2xl:h-[56px] 3xl:h-[70px] bg-[#FFC260] rounded-[10px] 3xl:rounded-[13px] text-[18px] 2xl:text-[22px] 3xl:text-[28px] font-semibold text-[#6E3B08] hover:bg-[#FFD280] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Go to Payment
               </button>
 
               {/* Terms */}
-              <p className="text-[10px] 2xl:text-[12px] 3xl:text-[22px] text-[#737AAE] text-center leading-[140%]">
+              <p className="text-[10px] 2xl:text-[12px] 3xl:text-[15px] text-[#737AAE] text-center leading-[140%]">
                 By clicking on the continue, you accept the terms and the privacy policy.
               </p>
             </div>
 
             {/* Need Help Card */}
-            <div className="w-full flex flex-col gap-[10px] 3xl:gap-[25px]">
+            <div className="w-full flex flex-col gap-[10px] 3xl:gap-[18px]">
               <h3 
-                className="text-[24px] 2xl:text-[32px] 3xl:text-[56px] lg:ml-[30px] leading-[44px] 3xl:leading-[72px] font-bold text-white ml-[25px] lg:ml-0"
+                className="text-[24px] 2xl:text-[32px] 3xl:text-[39px] lg:ml-[30px] leading-[44px] 3xl:leading-[50px] font-bold text-white ml-[25px] lg:ml-0"
                 style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
               >
                 Need Help?
               </h3>
               
-              <div className="w-full bg-[#0D0525] rounded-[30px] 3xl:rounded-[50px] p-[30px] 2xl:p-[40px] 3xl:p-[80px] flex flex-col gap-[20px] 2xl:gap-[25px] 3xl:gap-[50px]">
-                <p className="text-[16px] 2xl:text-[18px] 3xl:text-[32px] text-[#737AAE] leading-[160%]">
+              <div className="w-full bg-[#0D0525] rounded-[30px] 3xl:rounded-[35px] p-[30px] 2xl:p-[40px] 3xl:p-[56px] flex flex-col gap-[20px] 2xl:gap-[25px] 3xl:gap-[35px]">
+                <p className="text-[16px] 2xl:text-[18px] 3xl:text-[22px] text-[#737AAE] leading-[160%]">
                   Feel free to contact support service on our Discord server!
                 </p>
 
@@ -287,7 +287,7 @@ export default function CheckoutPage() {
                   </div>
                 </div>
 
-                <button className="w-full h-[46px] 2xl:h-[56px] 3xl:h-[100px] bg-[#100A36] border border-[#1D1550] rounded-[10px] 3xl:rounded-[18px] text-[18px] 2xl:text-[22px] 3xl:text-[40px] font-semibold text-[#737AAE] hover:border-[#FFC260] hover:text-white transition-colors">
+                <button className="w-full h-[46px] 2xl:h-[56px] 3xl:h-[70px] bg-[#100A36] border border-[#1D1550] rounded-[10px] 3xl:rounded-[13px] text-[18px] 2xl:text-[22px] 3xl:text-[28px] font-semibold text-[#737AAE] hover:border-[#FFC260] hover:text-white transition-colors">
                   Contact Support Service
                 </button>
               </div>

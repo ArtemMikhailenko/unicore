@@ -15,7 +15,7 @@ export default function SuccessPage() {
   };
 
   return (
-    <main className="w-full min-h-[70vh] bg-[#0A0218] flex flex-col items-center py-[50px] 2xl:py-[70px] 3xl:py-[120px] px-4 lg:px-[20%] relative overflow-hidden">
+    <main className="w-full min-h-[70vh] bg-[#0A0218] flex flex-col items-center py-[50px] 2xl:py-[70px] 3xl:py-[84px] px-4 lg:px-[20%] relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 opacity-90">
         <Image
@@ -30,9 +30,9 @@ export default function SuccessPage() {
       
 
       {/* Content */}
-      <div className="w-full max-w-[850px] 2xl:max-w-[1000px] 3xl:max-w-[1600px] flex flex-col items-center relative z-10 px-4">
+      <div className="w-full max-w-[850px] 2xl:max-w-[1000px] 3xl:max-w-[1120px] flex flex-col items-center relative z-10 px-4">
         {/* Character Image */}
-        <div className="relative w-full h-[262px] md:h-[550px] 2xl:h-[650px] 3xl:h-[1000px] flex items-end justify-center mb-[-90px] md:mb-[-290px] 2xl:mb-[-340px] 3xl:mb-[-550px]">
+        <div className="relative w-full h-[262px] md:h-[550px] 2xl:h-[650px] 3xl:h-[700px] flex items-end justify-center mb-[-90px] md:mb-[-290px] 2xl:mb-[-340px] 3xl:mb-[-550px]">
           <Image
             src="/images/success-character.png"
             alt="Success"
@@ -44,20 +44,20 @@ export default function SuccessPage() {
         </div>
 
         {/* Success Card */}
-        <div className="w-full max-w-[550px] 2xl:max-w-[650px] 3xl:max-w-[1000px] bg-[#0D0525] rounded-[20px] 3xl:rounded-[40px] p-[20px] md:p-[30px] 2xl:p-[40px] 3xl:p-[80px] flex flex-col gap-[15px] md:gap-[25px] 2xl:gap-[30px] 3xl:gap-[60px] relative z-10">
+        <div className="w-full max-w-[550px] 2xl:max-w-[650px] 3xl:max-w-[700px] bg-[#0D0525] rounded-[20px] 3xl:rounded-[28px] p-[20px] md:p-[30px] 2xl:p-[40px] 3xl:p-[56px] flex flex-col gap-[15px] md:gap-[25px] 2xl:gap-[30px] 3xl:gap-[42px] relative z-10">
           {/* Title with Icon */}
-          <div className="flex items-start gap-[15px] 2xl:gap-[20px] 3xl:gap-[40px]">
-            <div className="w-[40px] h-[40px] 2xl:w-[50px] 2xl:h-[50px] 3xl:w-[90px] 3xl:h-[90px] bg-[#FFC260] rounded-[10px] 3xl:rounded-[18px] flex items-center justify-center flex-shrink-0">
+          <div className="flex items-start gap-[15px] 2xl:gap-[20px] 3xl:gap-[28px]">
+            <div className="w-[40px] h-[40px] 2xl:w-[50px] 2xl:h-[50px] 3xl:w-[63px] 3xl:h-[63px] bg-[#FFC260] rounded-[10px] 3xl:rounded-[13px] flex items-center justify-center flex-shrink-0">
               <img src="/images/cake.svg" alt="" className="2xl:w-6 2xl:h-6 3xl:w-12 3xl:h-12" />
             </div>
             <div className="flex flex-col gap-[0px]">
               <h1 
-                className="text-[14px] md:text-[24px] 2xl:text-[32px] 3xl:text-[56px] leading-[26px] md:leading-[32px] 2xl:leading-[40px] 3xl:leading-[72px] font-bold text-white"
+                className="text-[14px] md:text-[24px] 2xl:text-[32px] 3xl:text-[39px] leading-[26px] md:leading-[32px] 2xl:leading-[40px] 3xl:leading-[50px] font-bold text-white"
                 style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
               >
                 Thank you for purchase!
               </h1>
-              <p className="text-[10px] md:text-[14px] 2xl:text-[16px] 3xl:text-[30px] text-[#737AAE] leading-[160%]">
+              <p className="text-[10px] md:text-[14px] 2xl:text-[16px] 3xl:text-[21px] text-[#737AAE] leading-[160%]">
                 Save your key and read the instruction!
               </p>
             </div>
@@ -67,8 +67,8 @@ export default function SuccessPage() {
           <div className="w-full h-[1px] bg-[#737AAE] opacity-10" />
 
           {/* Product Key Input */}
-          <div className="w-full h-[37px] md:h-[46px] 2xl:h-[56px] 3xl:h-[100px] bg-[#100A36] border border-[#1D1550] rounded-[10px] 3xl:rounded-[18px] px-[15px] 3xl:px-[30px] flex items-center justify-between">
-            <span className="text-[12px] md:text-[14px] 2xl:text-[16px] 3xl:text-[30px] text-[#737AAE] leading-[160%] font-mono">
+          <div className="w-full h-[37px] md:h-[46px] 2xl:h-[56px] 3xl:h-[70px] bg-[#100A36] border border-[#1D1550] rounded-[10px] 3xl:rounded-[13px] px-[15px] 3xl:px-[21px] flex items-center justify-between">
+            <span className="text-[12px] md:text-[14px] 2xl:text-[16px] 3xl:text-[21px] text-[#737AAE] leading-[160%] font-mono">
               {productKey}
             </span>
             <button 
@@ -89,13 +89,13 @@ export default function SuccessPage() {
           </div>
 
           {/* Buttons */}
-          <div className="flex gap-[10px] 3xl:gap-[25px]">
+          <div className="flex gap-[10px] 3xl:gap-[18px]">
             <a
               href="#"
-              className="flex-1 h-[37px] md:h-[46px] 2xl:h-[56px] 3xl:h-[100px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] 3xl:rounded-[18px] px-[20px] md:px-[30px] 3xl:px-[50px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
+              className="flex-1 h-[37px] md:h-[46px] 2xl:h-[56px] 3xl:h-[70px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] 3xl:rounded-[13px] px-[20px] md:px-[30px] 3xl:px-[35px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
             >
               <span 
-                className="text-[12px] md:text-[18px] 2xl:text-[22px] 3xl:text-[40px] font-semibold text-[#6E3B08] text-nowrap"
+                className="text-[12px] md:text-[18px] 2xl:text-[22px] 3xl:text-[28px] font-semibold text-[#6E3B08] text-nowrap"
                 style={{ fontFamily: 'Source Sans 3, sans-serif' }}
               >
                 Read Instruction
@@ -103,10 +103,10 @@ export default function SuccessPage() {
             </a>
             <a
               href="#"
-              className="flex-1 h-[37px] md:h-[46px] 2xl:h-[56px] 3xl:h-[100px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] 3xl:rounded-[18px] px-[20px] md:px-[30px] 3xl:px-[50px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
+              className="flex-1 h-[37px] md:h-[46px] 2xl:h-[56px] 3xl:h-[70px] bg-[#FFC260] border border-[#6E3B08] rounded-[10px] 3xl:rounded-[13px] px-[20px] md:px-[30px] 3xl:px-[35px] py-[10px] flex items-center justify-center hover:bg-[#FFD280] transition-colors"
             >
               <span 
-                className="text-[12px] md:text-[18px] 2xl:text-[22px] 3xl:text-[40px] font-semibold text-[#6E3B08] text-nowrap"
+                className="text-[12px] md:text-[18px] 2xl:text-[22px] 3xl:text-[28px] font-semibold text-[#6E3B08] text-nowrap"
                 style={{ fontFamily: 'Source Sans 3, sans-serif' }}
               >
                 Contact Support
