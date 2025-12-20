@@ -12,7 +12,7 @@ interface FeatureCardProps {
 function FeatureCard({ title, mobileTitle, description, iconSrc, backgroundSrc, className = '' }: FeatureCardProps) {
   return (
     <div 
-      className="relative rounded-[20px] px-[25px] 2xl:px-[35px] py-[20px] lg:py-[80px] 2xl:py-[100px] overflow-hidden h-auto min-h-[150px] lg:h-[270px] 2xl:h-[350px] w-full bg-[#0D0525]"
+      className="relative rounded-[20px] 2xl:rounded-[32px] 3xl:rounded-[44px] px-[25px] 2xl:px-[50px] 3xl:px-[70px] py-[20px] lg:py-[80px] 2xl:py-[130px] 3xl:py-[180px] overflow-hidden h-auto min-h-[150px] lg:h-[270px] 2xl:h-[450px] 3xl:h-[620px] w-full bg-[#0D0525]"
     >
       {/* Background Image - Desktop only */}
       <div 
@@ -24,24 +24,24 @@ function FeatureCard({ title, mobileTitle, description, iconSrc, backgroundSrc, 
         }}
       />
       
-      <div className="relative z-10 flex flex-col gap-[10px] items-center lg:items-start">
-        <div className="flex lg:flex-col lg:flex-row items-center gap-[10px] lg:gap-3">
+      <div className="relative z-10 flex flex-col gap-[10px] 2xl:gap-[20px] 3xl:gap-[30px] items-center lg:items-start">
+        <div className="flex lg:flex-col lg:flex-row items-center gap-[10px] lg:gap-3 2xl:gap-5 3xl:gap-7">
           <Image 
             src={iconSrc}
             alt={title}
             width={32}
             height={28}
-            className="w-[32px] h-[28px] 2xl:w-[42px] 2xl:h-[38px] rounded-lg"
+            className="w-[32px] h-[28px] 2xl:w-[54px] 2xl:h-[48px] 3xl:w-[72px] 3xl:h-[64px] rounded-lg"
           />
           <h3 
-            className="text-[16px] lg:text-[24px] 2xl:text-[32px] leading-[19px] lg:leading-[29px] 2xl:leading-[40px] font-bold text-white text-left lg:text-left"
+            className="text-[16px] lg:text-[24px] 2xl:text-[40px] 3xl:text-[56px] leading-[19px] lg:leading-[29px] 2xl:leading-[50px] 3xl:leading-[68px] font-bold text-white text-left lg:text-left"
             style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
           >
             <span className="lg:hidden">{mobileTitle || title}</span>
             <span className="hidden lg:inline">{title}</span>
           </h3>
         </div>
-        <p className="text-[12px] lg:text-[14px] 2xl:text-[18px] leading-[160%] text-[#737AAE] text-center lg:text-left line-clamp-3 lg:line-clamp-none">
+        <p className="text-[12px] lg:text-[14px] 2xl:text-[24px] 3xl:text-[32px] leading-[160%] text-[#737AAE] text-center lg:text-left line-clamp-3 lg:line-clamp-none">
           {description}
         </p>
       </div>
@@ -125,18 +125,18 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="w-full flex items-center justify-center px-4 lg:px-[10%] py-[30px] lg:py-[50px] 2xl:py-[70px]">
-      <div className="w-full max-w-[1002px] lg:max-w-none flex flex-col items-center lg:items-start gap-[25px] 2xl:gap-[35px]">
+    <section className="w-full flex items-center justify-center px-4 lg:px-[20%] py-[30px] lg:py-[50px] 2xl:py-[100px] 3xl:py-[140px]">
+      <div className="w-full max-w-[1002px] lg:max-w-none flex flex-col items-center lg:items-start gap-[25px] 2xl:gap-[60px] 3xl:gap-[80px]">
         {/* Title */}
         <h2 
-          className="text-[24px] lg:text-[36px] 2xl:text-[48px] leading-[29px] lg:leading-[44px] 2xl:leading-[56px] mx-auto font-bold text-white text-center"
+          className="text-[24px] lg:text-[36px] 2xl:text-[60px] 3xl:text-[80px] leading-[29px] lg:leading-[44px] 2xl:leading-[72px] 3xl:leading-[96px] mx-auto font-bold text-white text-center"
           style={{ fontFamily: 'var(--font-hywenhei, system-ui)' }}
         >
           See Our Unique Features!
         </h2>
 
         {/* Features Grid - Mobile: 2 columns, Desktop: flex wrap with specific widths */}
-        <div className="w-full grid grid-cols-2 gap-[16px] lg:flex lg:flex-wrap lg:gap-[32px] 2xl:gap-[40px]">
+        <div className="w-full grid grid-cols-2 gap-[16px] lg:flex lg:flex-wrap lg:gap-[32px] 2xl:gap-[50px] 3xl:gap-[70px]">
           <div className="lg:w-[58%]">
             <FeatureCard {...features[0]} />
           </div>

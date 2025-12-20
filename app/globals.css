@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-source-sans);
   --font-heading: var(--font-hywenhei);
+  --breakpoint-3xl: 2560px;
 }
 
 body {
